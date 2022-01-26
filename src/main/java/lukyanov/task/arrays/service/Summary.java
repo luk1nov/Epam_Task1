@@ -1,20 +1,23 @@
-package service;
+package lukyanov.task.arrays.service;
 
-import entity.ArrayEntity;
+import lukyanov.task.arrays.entity.ArrayEntity;
+import java.util.List;
 
 public class Summary {
 
     public int getMinValue(ArrayEntity arrayEntity){
-        int min = arrayEntity.getFirstElement();
-        for (int i: arrayEntity.getArray()) {
+        List<Integer> numbers = arrayEntity.getNumbers();
+        int min = numbers.get(0);
+        for (int i: numbers) {
             if(i < min) min = i;
         }
         return min;
     }
 
     public int getMaxValue(ArrayEntity arrayEntity){
-        int max = arrayEntity.getFirstElement();
-        for (int i: arrayEntity.getArray()) {
+        List<Integer> numbers = arrayEntity.getNumbers();
+        int max = numbers.get(0);
+        for (int i: numbers) {
             if(i > max) max = i;
         }
         return max;
@@ -24,7 +27,7 @@ public class Summary {
         float amountOfItems = 0;
         int summary;
         float avg;
-        for (int i: arrayEntity.getArray()) {
+        for (int i: arrayEntity.getNumbers()) {
             amountOfItems++;
         }
         summary = getSummary(arrayEntity);
@@ -34,7 +37,7 @@ public class Summary {
 
     public int getSummary(ArrayEntity arrayEntity){
         int summary = 0;
-        for (int i: arrayEntity.getArray()) {
+        for (int i: arrayEntity.getNumbers()) {
             summary += i;
         }
         return summary;
@@ -42,7 +45,7 @@ public class Summary {
 
     public int getNumberOfPlusElements(ArrayEntity arrayEntity){
         int plus = 0;
-        for (int i: arrayEntity.getArray()) {
+        for (int i: arrayEntity.getNumbers()) {
             if (i > 0) plus++;
         }
         return plus;
@@ -50,19 +53,20 @@ public class Summary {
 
     public int getNumberOfMinusElements(ArrayEntity arrayEntity){
         int minus = 0;
-        for (int i: arrayEntity.getArray()) {
+        for (int i: arrayEntity.getNumbers()) {
             if (i < 0) minus++;
         }
         return minus;
     }
 
-    public void replaceElement(ArrayEntity arrayEntity, int desiredElement, int newElement){
-        int arrayLength = arrayEntity.getSize();
-        int[] array = arrayEntity.getArray();
+    public List<Integer> replaceElement(ArrayEntity arrayEntity, int desiredElement, int newElement){
+        List<Integer> numbers = arrayEntity.getNumbers();
+        int arrayLength = arrayEntity.getNumbers().size();
         for (int i = 0; i < arrayLength; i++){
-            if (array[i] == desiredElement){
-                array[i] = newElement;
+            if (numbers.get(i) == desiredElement){
+                numbers.set(i, newElement);
             }
         }
+        return numbers;
     }
 }
