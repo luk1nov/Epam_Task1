@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.Arrays;
+
 public class ArrayEntity {
     protected int[] array;
 
@@ -8,7 +10,7 @@ public class ArrayEntity {
     }
 
     public ArrayEntity() {
-        this.array = new int[]{1, 2, 3, 10, 7, 5};
+        this.array = new int[]{1, -2, 3, -10, 7, 5};
     }
 
     public int[] getArray() {
@@ -21,5 +23,16 @@ public class ArrayEntity {
 
     public int getFirstElement(){
         return array[0];
+    }
+
+    public int getSize(){
+        return array.length;
+    }
+
+    @Override
+    public String toString() {
+        return "ArrayEntity{" +
+                "array=" + Arrays.toString(array) +
+                '}';
     }
 }
