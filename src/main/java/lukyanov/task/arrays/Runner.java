@@ -4,8 +4,7 @@ import lukyanov.task.arrays.entity.ArrayEntity;
 import lukyanov.task.arrays.service.Summary;
 import lukyanov.task.arrays.sorting.ArraySorting;
 
-import java.util.Arrays;
-import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,12 +13,13 @@ public class Runner {
 
 
     public static void main(String[] args) {
-        Integer[] a = {1, -2, 6, 4, 8, 10};
-        List<Integer> array = Arrays.asList(a);
-        ArrayEntity arrayEntity = new ArrayEntity(array);
+        int[] start = {0, 10, -1, -2, 8, 6};
+        Summary summary = new Summary();
+        ArrayEntity arrayEntity = new ArrayEntity(start);
         ArraySorting arraySorting = new ArraySorting();
         logger.info(arrayEntity);
-        arraySorting.bubbleSort(arrayEntity);
+        int[] newArray = summary.replaceElement(arrayEntity, -2, 99);
+        arrayEntity.setNumbers(newArray);
         logger.info(arrayEntity);
     }
 }
