@@ -1,19 +1,19 @@
 package lukyanov.task.arrays.entity;
 
-import java.util.List;
+import java.util.Arrays;
 
 public class ArrayEntity {
-    private List<Integer> numbers;
+    private int[] numbers;
 
-    public ArrayEntity(List<Integer> numbers) {
+    public ArrayEntity(int[] numbers) {
         this.numbers = numbers;
     }
 
-    public List<Integer> getNumbers() {
+    public int[] getNumbers() {
         return numbers;
     }
 
-    public void setNumbers(List<Integer> numbers) {
+    public void setNumbers(int[] numbers) {
         this.numbers = numbers;
     }
 
@@ -22,7 +22,7 @@ public class ArrayEntity {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("ArrayEntity{");
         stringBuilder.append("numbers=");
-        stringBuilder.append(numbers);
+        stringBuilder.append(Arrays.toString(numbers));
         stringBuilder.append('}');
         return stringBuilder.toString();
     }

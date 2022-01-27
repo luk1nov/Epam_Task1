@@ -1,72 +1,65 @@
 package lukyanov.task.arrays.service;
 
 import lukyanov.task.arrays.entity.ArrayEntity;
-import java.util.List;
+
+import java.util.Arrays;
+import java.util.OptionalDouble;
+import java.util.OptionalInt;
+import java.util.stream.IntStream;
 
 public class Summary {
 
     public int getMinValue(ArrayEntity arrayEntity){
-        List<Integer> numbers = arrayEntity.getNumbers();
-        int min = numbers.get(0);
-        for (int i: numbers) {
-            if(i < min) min = i;
-        }
-        return min;
+        int[] numbers = arrayEntity.getNumbers();
+        IntStream minimum = IntStream.of(numbers);
+        OptionalInt min1 = minimum.min();
+        int min2 = min1.getAsInt();
+        return min2;
     }
 
     public int getMaxValue(ArrayEntity arrayEntity){
-        List<Integer> numbers = arrayEntity.getNumbers();
-        int max = numbers.get(0);
-        for (int i: numbers) {
-            if(i > max) max = i;
-        }
-        return max;
+        int[] numbers = arrayEntity.getNumbers();
+        IntStream maximum = IntStream.of(numbers);
+        OptionalInt max1 = maximum.max();
+        int max2 = max1.getAsInt();
+        return max2;
     }
 
-    public float getAvgValue(ArrayEntity arrayEntity){
-        float amountOfItems = 0;
-        int summary;
-        float avg;
-        for (int i: arrayEntity.getNumbers()) {
-            amountOfItems++;
-        }
-        summary = getSummary(arrayEntity);
-        avg = summary/amountOfItems;
-        return avg;
+    public double getAvgValue(ArrayEntity arrayEntity){
+        int[] numbers = arrayEntity.getNumbers();
+        IntStream avg = IntStream.of(numbers);
+        OptionalDouble avg1 = avg.average();
+        double avg2 = avg1.getAsDouble();
+        return avg2;
     }
 
     public int getSummary(ArrayEntity arrayEntity){
-        int summary = 0;
-        for (int i: arrayEntity.getNumbers()) {
-            summary += i;
-        }
-        return summary;
+        int[] numbers = arrayEntity.getNumbers();
+        IntStream sum1 = IntStream.of(numbers);
+        int sum2 = sum1.sum();
+        return sum2;
     }
 
-    public int getNumberOfPlusElements(ArrayEntity arrayEntity){
-        int plus = 0;
-        for (int i: arrayEntity.getNumbers()) {
-            if (i > 0) plus++;
-        }
-        return plus;
+    public long getNumberOfPlusElements(ArrayEntity arrayEntity){
+        int[] numbers = arrayEntity.getNumbers();
+        IntStream plus = IntStream.of(numbers);
+        plus = plus.filter(i -> (i > 0));
+        return plus.count();
     }
 
-    public int getNumberOfMinusElements(ArrayEntity arrayEntity){
-        int minus = 0;
-        for (int i: arrayEntity.getNumbers()) {
-            if (i < 0) minus++;
-        }
-        return minus;
+    public long getNumberOfMinusElements(ArrayEntity arrayEntity){
+        int[] numbers = arrayEntity.getNumbers();
+        IntStream minus = Arrays.stream(numbers);
+        minus = minus.filter(i -> (i < 0));
+        return minus.count();
     }
 
-    public List<Integer> replaceElement(ArrayEntity arrayEntity, int desiredElement, int newElement){
-        List<Integer> numbers = arrayEntity.getNumbers();
-        int arrayLength = arrayEntity.getNumbers().size();
-        for (int i = 0; i < arrayLength; i++){
-            if (numbers.get(i) == desiredElement){
-                numbers.set(i, newElement);
-            }
-        }
-        return numbers;
+    public int[] replaceElement(ArrayEntity arrayEntity, int desiredElement, int newElement){
+        int[] numbers = arrayEntity.getNumbers();
+        IntStream minus = IntStream.of(numbers).map(i -> {
+           if (i == desiredElement) i = newElement;
+            return i;
+        });
+        return minus.toArray();
     }
 }
