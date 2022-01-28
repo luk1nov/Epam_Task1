@@ -18,8 +18,7 @@ public class Runner {
         ArrayEntity arrayEntity = new ArrayEntity(start);
         ArraySorting arraySorting = new ArraySorting();
         logger.info(arrayEntity);
-        int[] newArray = summary.replaceElement(arrayEntity, -2, 99);
-        arrayEntity.setNumbers(newArray);
+        arraySorting.bubbleSort(arrayEntity);
         logger.info(arrayEntity);
     }
 }
