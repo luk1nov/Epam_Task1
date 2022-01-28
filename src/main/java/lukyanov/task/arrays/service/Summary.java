@@ -9,49 +9,42 @@ import java.util.stream.IntStream;
 
 public class Summary {
 
-    public int getMinValue(ArrayEntity arrayEntity){
+    public IntStream convertToIntStream(ArrayEntity arrayEntity){
         int[] numbers = arrayEntity.getNumbers();
-        IntStream minimum = IntStream.of(numbers);
+        return Arrays.stream(numbers);
+    }
+
+    public int getMinValue(ArrayEntity arrayEntity){
+        IntStream minimum = convertToIntStream(arrayEntity);
         OptionalInt min1 = minimum.min();
-        int min2 = min1.getAsInt();
-        return min2;
+        return min1.getAsInt();
     }
 
     public int getMaxValue(ArrayEntity arrayEntity){
-        int[] numbers = arrayEntity.getNumbers();
-        IntStream maximum = IntStream.of(numbers);
-        OptionalInt max1 = maximum.max();
-        int max2 = max1.getAsInt();
-        return max2;
+        IntStream maximum = convertToIntStream(arrayEntity);
+        OptionalInt min1 = maximum.min();
+        return min1.getAsInt();
     }
 
     public double getAvgValue(ArrayEntity arrayEntity){
-        int[] numbers = arrayEntity.getNumbers();
-        IntStream avg = IntStream.of(numbers);
+        IntStream avg = convertToIntStream(arrayEntity);
         OptionalDouble avg1 = avg.average();
-        double avg2 = avg1.getAsDouble();
-        return avg2;
+        return avg1.getAsDouble();
     }
 
     public int getSummary(ArrayEntity arrayEntity){
-        int[] numbers = arrayEntity.getNumbers();
-        IntStream sum1 = IntStream.of(numbers);
-        int sum2 = sum1.sum();
-        return sum2;
+        IntStream sum1 = convertToIntStream(arrayEntity);
+        return sum1.sum();
     }
 
     public long getNumberOfPlusElements(ArrayEntity arrayEntity){
-        int[] numbers = arrayEntity.getNumbers();
-        IntStream plus = IntStream.of(numbers);
-        plus = plus.filter(i -> (i > 0));
-        return plus.count();
+        IntStream plus = convertToIntStream(arrayEntity);
+        return plus.filter(i -> (i > 0)).count();
     }
 
     public long getNumberOfMinusElements(ArrayEntity arrayEntity){
-        int[] numbers = arrayEntity.getNumbers();
-        IntStream minus = Arrays.stream(numbers);
-        minus = minus.filter(i -> (i < 0));
-        return minus.count();
+        IntStream minus = convertToIntStream(arrayEntity);
+        return minus.filter(i -> (i < 0)).count();
     }
 
     public int[] replaceElement(ArrayEntity arrayEntity, int desiredElement, int newElement){

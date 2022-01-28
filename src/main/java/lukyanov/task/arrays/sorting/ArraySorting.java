@@ -29,17 +29,5 @@ public class ArraySorting {
         }
     }
 
-//    public void newbubbleSort(ArrayEntity arrayEntity){
-//        int[] numbers = arrayEntity.getNumbers();
-//        while (needSorting) {
-//            needSorting = false;
-//            IntStream.range(0, numbers.length - 1).forEach(i -> {
-//                if (numbers[i] > numbers[i + 1]) {
-//                    swap(numbers, i, i+1);
-//                    needSorting = true;
-//                }
-//            });
-//        }
-//    }
 
 }

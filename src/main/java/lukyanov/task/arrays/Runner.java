@@ -1,6 +1,8 @@
 package lukyanov.task.arrays;
 
+import lukyanov.task.arrays.customexception.CustomException;
 import lukyanov.task.arrays.entity.ArrayEntity;
+import lukyanov.task.arrays.filereader.CustomFileReader;
 import lukyanov.task.arrays.service.Summary;
 import lukyanov.task.arrays.sorting.ArraySorting;
 
@@ -12,13 +14,10 @@ public class Runner {
     private static final Logger logger = LogManager.getLogger();
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CustomException {
         int[] start = {0, 10, -1, -2, 8, 6};
-        Summary summary = new Summary();
         ArrayEntity arrayEntity = new ArrayEntity(start);
-        ArraySorting arraySorting = new ArraySorting();
-        logger.info(arrayEntity);
-        arraySorting.bubbleSort(arrayEntity);
-        logger.info(arrayEntity);
+        CustomFileReader customFileReader = new CustomFileReader();
+        customFileReader.readFile();
     }
 }
