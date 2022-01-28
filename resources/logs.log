@@ -1,0 +1,58 @@
+[INFO ] 2022-01-27 12:41:23.606 [main] Runner - ArrayEntity{numbers=[I@6392827e}
+[INFO ] 2022-01-27 12:41:23.615 [main] Runner - ArrayEntity{numbers=[I@6392827e}
+[INFO ] 2022-01-27 12:43:52.390 [main] Runner - ArrayEntity{numbers=[I@3c7f66c4}
+[INFO ] 2022-01-27 12:43:52.396 [main] Runner - ArrayEntity{numbers=[I@3c7f66c4}
+[INFO ] 2022-01-27 12:45:16.956 [main] Runner - java.util.stream.SliceOps$2@74751b3
+[INFO ] 2022-01-27 12:45:16.959 [main] Runner - [I@37d4349f
+[INFO ] 2022-01-27 12:47:46.558 [main] Runner - [2, 61, 78, 48, 96, 79, 16, 52, 35, 27]
+[INFO ] 2022-01-27 12:49:17.802 [main] Runner - ArrayEntity{numbers=[I@6392827e}
+[INFO ] 2022-01-27 12:49:17.802 [main] Runner - ArrayEntity{numbers=[I@6392827e}
+[INFO ] 2022-01-27 12:49:38.604 [main] Runner - [I@6392827e
+[INFO ] 2022-01-27 12:49:38.604 [main] Runner - [I@6392827e
+[INFO ] 2022-01-27 12:50:45.933 [main] Runner - ArrayEntity{numbers=[I@6392827e}
+[INFO ] 2022-01-27 12:50:45.933 [main] Runner - ArrayEntity{numbers=[I@6392827e}
+[INFO ] 2022-01-27 12:52:34.604 [main] Runner - ArrayEntity{numbers=[I@7bd4937b}
+[INFO ] 2022-01-27 12:52:34.604 [main] Runner - ArrayEntity{numbers=[I@7bd4937b}
+[INFO ] 2022-01-27 12:53:53.321 [main] Runner - ArrayEntity{numbers=[I@1de76cc7}
+[INFO ] 2022-01-27 12:53:53.322 [main] Runner - ArrayEntity{numbers=[I@1de76cc7}
+[INFO ] 2022-01-27 12:53:55.770 [main] Runner - [I@7bd4937b
+[INFO ] 2022-01-27 12:53:55.770 [main] Runner - [I@7bd4937b
+[INFO ] 2022-01-27 12:55:25.827 [main] Runner - ArrayEntity{numbers=[I@7bd4937b}
+[INFO ] 2022-01-27 12:55:25.827 [main] Runner - ArrayEntity{numbers=[I@7bd4937b}
+[INFO ] 2022-01-27 12:59:31.806 [main] Runner - ArrayEntity{numbers=[-2, 1, 4, 6, 8, 10]}
+[INFO ] 2022-01-27 12:59:31.806 [main] Runner - ArrayEntity{numbers=[-2, 1, 4, 6, 8, 10]}
+[INFO ] 2022-01-27 12:59:50.854 [main] Runner - ArrayEntity{numbers=[-2, 1, 4, 6, 8, 10]}
+[INFO ] 2022-01-27 12:59:50.854 [main] Runner - ArrayEntity{numbers=[-2, 1, 4, 6, 8, 10]}
+[INFO ] 2022-01-27 13:00:29.311 [main] Runner - ArrayEntity{numbers=[4, 10, 1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:00:29.311 [main] Runner - ArrayEntity{numbers=[-2, 1, 4, 6, 8, 10]}
+[INFO ] 2022-01-27 13:22:20.569 [main] Runner - ArrayEntity{numbers=[4, 10, 1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:22:20.585 [main] Runner - ArrayEntity{numbers=[4, 10, 1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:22:37.756 [main] Runner - ArrayEntity{numbers=[4, 10, 1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:22:37.756 [main] Runner - -2
+[INFO ] 2022-01-27 13:30:31.508 [main] Runner - ArrayEntity{numbers=[4, 10, 1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:30:31.508 [main] Runner - 5
+[INFO ] 2022-01-27 13:30:46.718 [main] Runner - ArrayEntity{numbers=[0, 10, -1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:30:46.718 [main] Runner - 3
+[INFO ] 2022-01-27 13:31:30.693 [main] Runner - ArrayEntity{numbers=[0, 10, -1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:31:30.693 [main] Runner - 2
+[INFO ] 2022-01-27 13:36:48.257 [main] Runner - ArrayEntity{numbers=[0, 10, -1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:36:48.263 [main] Runner - [I@6e0f5f7f
+[INFO ] 2022-01-27 13:37:05.811 [main] Runner - ArrayEntity{numbers=[0, 10, -1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:37:05.815 [main] Runner - [I@6e0f5f7f
+[INFO ] 2022-01-27 13:37:05.816 [main] Runner - ArrayEntity{numbers=[0, 10, -1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:38:06.754 [main] Runner - ArrayEntity{numbers=[0, 10, -1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:38:06.758 [main] Runner - [99]
+[INFO ] 2022-01-27 13:38:06.759 [main] Runner - ArrayEntity{numbers=[0, 10, -1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:43:29.502 [main] Runner - ArrayEntity{numbers=[0, 10, -1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:43:29.517 [main] Runner - [0, 10, -1, 99, 8, 6]
+[INFO ] 2022-01-27 13:43:29.517 [main] Runner - ArrayEntity{numbers=[0, 10, -1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:45:45.276 [main] Runner - ArrayEntity{numbers=[0, 10, -1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:45:45.292 [main] Runner - [0, 10, -1, 99, 8, 6]
+[INFO ] 2022-01-27 13:45:45.292 [main] Runner - ArrayEntity{numbers=[0, 10, -1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:46:23.867 [main] Runner - ArrayEntity{numbers=[0, 10, -1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:47:19.006 [main] Runner - ArrayEntity{numbers=[0, 10, -1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:48:19.091 [main] Runner - ArrayEntity{numbers=[0, 10, -1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:48:19.091 [main] Runner - [0, 10, -1, 99, 8, 6]
+[INFO ] 2022-01-27 13:48:19.091 [main] Runner - ArrayEntity{numbers=[0, 10, -1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:49:26.262 [main] Runner - ArrayEntity{numbers=[0, 10, -1, -2, 8, 6]}
+[INFO ] 2022-01-27 13:49:26.262 [main] Runner - ArrayEntity{numbers=[0, 10, -1, 99, 8, 6]}
