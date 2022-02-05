@@ -1,27 +1,26 @@
 package lukyanov.task.arrays.filereader;
 
 import lukyanov.task.arrays.customexception.CustomException;
-import lukyanov.task.arrays.entity.ArrayEntity;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class CustomFileReader {
-
-    private final String path = "resources/numbers.txt";
+    private static final Logger logger = LogManager.getLogger(CustomFileReader.class);
+    private static final String PATH = "resources/numbers.txt";
 
     public List<String> readFile() throws CustomException {
-        File file = new File(path);
+        File file = new File(PATH);
 
-        try (FileReader fr = new FileReader(file)) {
-            List<ArrayEntity> arrayEntityList = new ArrayList<>();
-            BufferedReader reader = new BufferedReader(fr);
-            return reader.lines().collect(Collectors.toList());
+        try (BufferedReader reader = new BufferedReader(new FileReader(file)) ) {
+            List<String> allLines = reader.lines().collect(Collectors.toList());
+            logger.info("file in " + PATH + ":\n" + allLines);
+            return allLines;
         } catch (IOException e) {
+            logger.error("io exception");
             throw new CustomException(e.getMessage());
         }
     }

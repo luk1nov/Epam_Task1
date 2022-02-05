@@ -1,2 +1,55 @@
 [INFO ] 2022-02-05 16:47:18.763 [main] Runner - [ArrayEntity{numbers=[1, 2, 3]}]
 [INFO ] 2022-02-05 16:47:40.250 [main] Runner - [ArrayEntity{numbers=[1, 2, 3]}, ArrayEntity{numbers=[1, 4, 56, 2]}]
+[DEBUG] 2022-02-05 17:59:07.957 [main] ArrayEntity - array entity created
+[DEBUG] 2022-02-05 17:59:07.961 [main] ArrayEntity - array entity created
+[INFO ] 2022-02-05 17:59:07.962 [main] Runner - [ArrayEntity{numbers=[1, 2, 3]}, ArrayEntity{numbers=[1, 4, 56, 2]}]
+[INFO ] 2022-02-05 20:57:25.919 [main] CustomFileReader - file in resources/numbers.txt:
+[1; 2; 3;, 1;4;56;2, 2;we;643]
+[INFO ] 2022-02-05 20:57:25.926 [main] ArrayEntity - array entity created: [1, 2, 3]
+[INFO ] 2022-02-05 20:57:25.927 [main] ArrayParser - [I@1de76cc7 parsed
+[DEBUG] 2022-02-05 20:57:25.928 [main] NumberValidation - Valid line
+[INFO ] 2022-02-05 20:57:25.928 [main] ArrayEntity - array entity created: [1, 4, 56, 2]
+[INFO ] 2022-02-05 20:57:25.928 [main] ArrayParser - [I@54bff557 parsed
+[DEBUG] 2022-02-05 20:57:25.928 [main] NumberValidation - Valid line
+[ERROR] 2022-02-05 20:57:25.929 [main] NumberValidation - Invalid line
+[INFO ] 2022-02-05 20:57:25.930 [main] Runner - [ArrayEntity{numbers=[1, 2, 3]}, ArrayEntity{numbers=[1, 4, 56, 2]}]
+[INFO ] 2022-02-05 20:57:47.280 [main] CustomFileReader - file in resources/numbers.txt:
+[1; 2; 3;, 1;4;56;2, 2;we;643]
+[INFO ] 2022-02-05 20:57:47.285 [main] ArrayEntity - array entity created: [1, 2, 3]
+[INFO ] 2022-02-05 20:57:47.286 [main] ArrayParser - [1, 2, 3] parsed
+[DEBUG] 2022-02-05 20:57:47.286 [main] NumberValidation - Valid line
+[INFO ] 2022-02-05 20:57:47.287 [main] ArrayEntity - array entity created: [1, 4, 56, 2]
+[INFO ] 2022-02-05 20:57:47.287 [main] ArrayParser - [1, 4, 56, 2] parsed
+[DEBUG] 2022-02-05 20:57:47.287 [main] NumberValidation - Valid line
+[ERROR] 2022-02-05 20:57:47.287 [main] NumberValidation - Invalid line
+[INFO ] 2022-02-05 20:57:47.288 [main] Runner - [ArrayEntity{numbers=[1, 2, 3]}, ArrayEntity{numbers=[1, 4, 56, 2]}]
+[INFO ] 2022-02-05 20:58:34.734 [main] CustomFileReader - file in resources/numbers.txt:
+[1; 2; 3;, 1;4;56;2, 2;we;643]
+[INFO ] 2022-02-05 20:58:34.746 [main] ArrayEntity - array entity created: [1, 2, 3]
+[INFO ] 2022-02-05 20:58:34.746 [main] ArrayParser - [1, 2, 3] parsed
+[INFO ] 2022-02-05 20:58:34.746 [main] NumberValidation - Valid line
+[INFO ] 2022-02-05 20:58:34.747 [main] ArrayEntity - array entity created: [1, 4, 56, 2]
+[INFO ] 2022-02-05 20:58:34.747 [main] ArrayParser - [1, 4, 56, 2] parsed
+[INFO ] 2022-02-05 20:58:34.747 [main] NumberValidation - Valid line
+[ERROR] 2022-02-05 20:58:34.747 [main] NumberValidation - Invalid line
+[INFO ] 2022-02-05 20:58:34.748 [main] Runner - [ArrayEntity{numbers=[1, 2, 3]}, ArrayEntity{numbers=[1, 4, 56, 2]}]
+[INFO ] 2022-02-05 21:02:01.366 [main] CustomFileReader - file in resources/numbers.txt:
+[1; 2; 3;, 1;4;56;2, 2;we;643]
+[INFO ] 2022-02-05 21:02:01.374 [main] ArrayEntity - array entity created: [1, 2, 3]
+[INFO ] 2022-02-05 21:02:01.375 [main] ArrayParser - [1, 2, 3] parsed
+[INFO ] 2022-02-05 21:02:01.375 [main] ArrayParser - Valid line
+[INFO ] 2022-02-05 21:02:01.376 [main] ArrayEntity - array entity created: [1, 4, 56, 2]
+[INFO ] 2022-02-05 21:02:01.376 [main] ArrayParser - [1, 4, 56, 2] parsed
+[INFO ] 2022-02-05 21:02:01.377 [main] ArrayParser - Valid line
+[ERROR] 2022-02-05 21:02:01.377 [main] ArrayParser - Invalid line
+[INFO ] 2022-02-05 21:02:01.378 [main] Runner - [ArrayEntity{numbers=[1, 2, 3]}, ArrayEntity{numbers=[1, 4, 56, 2]}]
+[INFO ] 2022-02-05 21:03:36.686 [main] CustomFileReader - file in resources/numbers.txt:
+[1; 2; 3;, 1;4;56;2, 2;we;643]
+[INFO ] 2022-02-05 21:03:36.695 [main] ArrayEntity - array entity created: [1, 2, 3]
+[INFO ] 2022-02-05 21:03:36.696 [main] FileParser - [1, 2, 3] parsed
+[INFO ] 2022-02-05 21:03:36.696 [main] FileParser - Valid line
+[INFO ] 2022-02-05 21:03:36.697 [main] ArrayEntity - array entity created: [1, 4, 56, 2]
+[INFO ] 2022-02-05 21:03:36.697 [main] FileParser - [1, 4, 56, 2] parsed
+[INFO ] 2022-02-05 21:03:36.698 [main] FileParser - Valid line
+[ERROR] 2022-02-05 21:03:36.698 [main] FileParser - Invalid line
+[INFO ] 2022-02-05 21:03:36.699 [main] Runner - [ArrayEntity{numbers=[1, 2, 3]}, ArrayEntity{numbers=[1, 4, 56, 2]}]

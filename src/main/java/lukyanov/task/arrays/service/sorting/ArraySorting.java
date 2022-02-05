@@ -1,10 +1,11 @@
 package lukyanov.task.arrays.service.sorting;
 
 import lukyanov.task.arrays.entity.ArrayEntity;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ArraySorting {
-
-    static private boolean needSorting = true;
+    private static final Logger logger = LogManager.getLogger();
 
     private void swap(int[] numbers, int ind1, int ind2) {
         int tmp = numbers[ind1];
@@ -12,7 +13,8 @@ public class ArraySorting {
         numbers[ind2] = tmp;
     }
 
-    public void bubbleSort(ArrayEntity arrayEntity){
+    public ArrayEntity bubbleSort(ArrayEntity arrayEntity){
+        ArrayEntity sortedArrayEntity;
         int[] numbers = arrayEntity.getNumbers();
         boolean needIteration = true;
         while (needIteration) {
@@ -24,9 +26,13 @@ public class ArraySorting {
                 }
             }
         }
+        sortedArrayEntity = new ArrayEntity(numbers);
+        logger.info("[bubble sort] after: " + sortedArrayEntity);
+        return sortedArrayEntity;
     }
 
-    public void selectionSort(ArrayEntity arrayEntity){
+    public ArrayEntity selectionSort(ArrayEntity arrayEntity){
+        ArrayEntity newArrayEntity;
         int[] numbers = arrayEntity.getNumbers();
         for (int i = 0; i < numbers.length; i++) {
             int minInd = i;
@@ -37,27 +43,29 @@ public class ArraySorting {
             }
             swap(numbers, i, minInd);
         }
+        newArrayEntity = new ArrayEntity(numbers);
+        logger.info("[selection sort] before: " + newArrayEntity);
+        return newArrayEntity;
     }
 
-    public void insertionSort(ArrayEntity arrayEntity){
+    public ArrayEntity insertionSort(ArrayEntity arrayEntity){
+        ArrayEntity newArrayEntity;
         int[] numbers = arrayEntity.getNumbers();
         for (int left = 0; left < numbers.length; left++) {
-            // Вытаскиваем значение элемента
             int value = numbers[left];
-            // Перемещаемся по элементам, которые перед вытащенным элементом
             int i = left - 1;
             for (; i >= 0; i--) {
-                // Если вытащили значение меньшее — передвигаем больший элемент дальше
                 if (value < numbers[i]) {
                     numbers[i + 1] = numbers[i];
                 } else {
-                    // Если вытащенный элемент больше — останавливаемся
                     break;
                 }
             }
-            // В освободившееся место вставляем вытащенное значение
             numbers[i + 1] = value;
         }
+        newArrayEntity = new ArrayEntity(numbers);
+        logger.info("[insertion sort] before: " + newArrayEntity);
+        return newArrayEntity;
 
     }
 
