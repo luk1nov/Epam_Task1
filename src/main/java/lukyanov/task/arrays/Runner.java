@@ -1,10 +1,8 @@
 package lukyanov.task.arrays;
 
 import lukyanov.task.arrays.customexception.CustomException;
-import lukyanov.task.arrays.entity.ArrayEntity;
 import lukyanov.task.arrays.filereader.CustomFileReader;
-import lukyanov.task.arrays.service.Summary;
-import lukyanov.task.arrays.sorting.ArraySorting;
+import lukyanov.task.arrays.parser.FileReaderParser;
 
 
 import org.apache.logging.log4j.LogManager;
@@ -15,9 +13,8 @@ public class Runner {
 
 
     public static void main(String[] args) throws CustomException {
-        int[] start = {0, 10, -1, -2, 8, 6};
-        ArrayEntity arrayEntity = new ArrayEntity(start);
         CustomFileReader customFileReader = new CustomFileReader();
-        customFileReader.readFile();
+        FileReaderParser fileReaderParser = new FileReaderParser();
+        logger.info(fileReaderParser.parse(customFileReader.readFile()));
     }
 }

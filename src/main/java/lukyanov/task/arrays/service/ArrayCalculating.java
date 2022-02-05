@@ -7,7 +7,7 @@ import java.util.OptionalDouble;
 import java.util.OptionalInt;
 import java.util.stream.IntStream;
 
-public class Summary {
+public class ArrayCalculating {
 
     public IntStream convertToIntStream(ArrayEntity arrayEntity){
         int[] numbers = arrayEntity.getNumbers();

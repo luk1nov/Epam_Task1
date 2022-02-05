@@ -1,2 +1,2 @@
-[INFO ] 2022-01-28 14:46:19.937 [main] Runner - ArrayEntity{numbers=[0, 10, -1, -2, 8, 6]}
-[INFO ] 2022-01-28 14:55:09.465 [main] Runner - ArrayEntity{numbers=[0, 10, -1, -2, 8, 6]}
+[INFO ] 2022-02-05 16:47:18.763 [main] Runner - [ArrayEntity{numbers=[1, 2, 3]}]
+[INFO ] 2022-02-05 16:47:40.250 [main] Runner - [ArrayEntity{numbers=[1, 2, 3]}, ArrayEntity{numbers=[1, 4, 56, 2]}]

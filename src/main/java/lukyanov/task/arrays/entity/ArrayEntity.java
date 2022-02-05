@@ -1,19 +1,24 @@
 package lukyanov.task.arrays.entity;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class ArrayEntity {
     private int[] numbers;
+
+    public ArrayEntity() {
+
+    }
 
     public ArrayEntity(int[] numbers) {
         this.numbers = numbers;
     }
 
     public int[] getNumbers() {
-        return numbers;
+        return Arrays.copyOf(numbers, numbers.length);
     }
 
-    public void setNumbers(int[] numbers) {
+    public void setNumbers(int... numbers) {
         this.numbers = numbers;
     }
 
