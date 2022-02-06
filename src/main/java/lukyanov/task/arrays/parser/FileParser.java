@@ -15,11 +15,11 @@ public class FileParser {
     public List<ArrayEntity> parseFile(List<String> lines){
         List<ArrayEntity> arrayEntityList = new ArrayList<>();
         for (String line : lines) {
-            if (NumberValidation.checkWholeString(line)){
+            if (NumberValidation.validateLine(line)){
+                logger.info("[" + line + "] Valid line");
                 arrayEntityList.add(parseLine(line));
-                logger.info("Valid line");
             } else {
-                logger.error("Invalid line");
+                logger.error("[" + line + "] Invalid line");
             }
         }
         return arrayEntityList;
@@ -29,12 +29,19 @@ public class FileParser {
     private ArrayEntity parseLine(String line){
         ArrayEntity arrayEntity;
         List<String> splitArray = Arrays.asList(line.split(";"));
-        int[] array = new int[splitArray.size()];
-        for (int i = 0; i < splitArray.size(); i++) {
-            array[i] = Integer.parseInt(splitArray.get(i).trim());
-        }
-        arrayEntity = new ArrayEntity(array);
-        logger.info(Arrays.toString(array) + " parsed");
+        arrayEntity = new ArrayEntity(parseToArray(splitArray));
+        logger.info("entity parsed " + arrayEntity);
         return arrayEntity;
+    }
+
+    private static int[] parseToArray(List<String> list){
+        if(list.size() == 1 && list.get(0).trim().isEmpty()){
+            return new int[0];
+        }
+        int[] array = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            array[i] = Integer.parseInt(list.get(i).trim());
+        }
+        return array;
     }
 }

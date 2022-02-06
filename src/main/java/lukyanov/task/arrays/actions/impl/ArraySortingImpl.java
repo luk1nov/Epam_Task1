@@ -1,11 +1,12 @@
-package lukyanov.task.arrays.service.sorting;
+package lukyanov.task.arrays.actions.impl;
 
 import lukyanov.task.arrays.entity.ArrayEntity;
+import lukyanov.task.arrays.actions.ArraySorting;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ArraySorting {
-    private static final Logger logger = LogManager.getLogger();
+public class ArraySortingImpl implements ArraySorting {
+    private static final Logger logger = LogManager.getLogger(ArraySortingImpl.class);
 
     private void swap(int[] numbers, int ind1, int ind2) {
         int tmp = numbers[ind1];
@@ -13,6 +14,7 @@ public class ArraySorting {
         numbers[ind2] = tmp;
     }
 
+    @Override
     public ArrayEntity bubbleSort(ArrayEntity arrayEntity){
         ArrayEntity sortedArrayEntity;
         int[] numbers = arrayEntity.getNumbers();
@@ -27,10 +29,10 @@ public class ArraySorting {
             }
         }
         sortedArrayEntity = new ArrayEntity(numbers);
-        logger.info("[bubble sort] after: " + sortedArrayEntity);
         return sortedArrayEntity;
     }
 
+    @Override
     public ArrayEntity selectionSort(ArrayEntity arrayEntity){
         ArrayEntity newArrayEntity;
         int[] numbers = arrayEntity.getNumbers();
@@ -44,10 +46,10 @@ public class ArraySorting {
             swap(numbers, i, minInd);
         }
         newArrayEntity = new ArrayEntity(numbers);
-        logger.info("[selection sort] before: " + newArrayEntity);
         return newArrayEntity;
     }
 
+    @Override
     public ArrayEntity insertionSort(ArrayEntity arrayEntity){
         ArrayEntity newArrayEntity;
         int[] numbers = arrayEntity.getNumbers();
@@ -64,7 +66,6 @@ public class ArraySorting {
             numbers[i + 1] = value;
         }
         newArrayEntity = new ArrayEntity(numbers);
-        logger.info("[insertion sort] before: " + newArrayEntity);
         return newArrayEntity;
 
     }

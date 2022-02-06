@@ -5,9 +5,9 @@ import org.apache.logging.log4j.Logger;
 
 public class NumberValidation {
 
-    private static final Logger logger = LogManager.getLogger();
+    private static final String isArrayEntityString ="^(-?\\d+(\\s+)?;?(\\s+)?)+$";
 
-    public static boolean checkWholeString(String str){
-        return str.matches("^(\\d+( +)?;?( +)?)+$");
+    public static boolean validateLine(String str){
+        return str.matches(isArrayEntityString);
     }
 }

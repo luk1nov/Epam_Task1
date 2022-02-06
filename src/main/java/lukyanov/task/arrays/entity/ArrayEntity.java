@@ -18,15 +18,27 @@ public class ArrayEntity {
 
     public ArrayEntity(int[] numbers) {
         this.numbers = numbers;
-        logger.info("array entity created: " + Arrays.toString(numbers));
     }
 
     public int[] getNumbers() {
         return Arrays.copyOf(numbers, numbers.length);
     }
 
-    public void setNumbers(int... numbers) {
+    public void setNumbers(int[] numbers) {
         this.numbers = numbers;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || obj.getClass() != this.getClass()) return false;
+        ArrayEntity thisArray = (ArrayEntity) obj;
+        return Arrays.equals(numbers, thisArray.numbers);
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(numbers);
     }
 
     @Override
@@ -37,15 +49,5 @@ public class ArrayEntity {
         stringBuilder.append(Arrays.toString(numbers));
         stringBuilder.append('}');
         return stringBuilder.toString();
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
     }
 }

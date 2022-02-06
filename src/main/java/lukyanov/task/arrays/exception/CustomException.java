@@ -1,4 +1,4 @@
-package lukyanov.task.arrays.customexception;
+package lukyanov.task.arrays.exception;
 
 public class CustomException extends Exception{
     public CustomException() {
