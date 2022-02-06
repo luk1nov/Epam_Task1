@@ -20,6 +20,7 @@ class ArrayEntityServiceTest {
     private static final Logger logger = LogManager.getLogger(ArrayEntityServiceTest.class);
 
     @Test
+    @DisplayName("getArrayFromFile")
     void getArrayFromFile() {
         try {
             List<ArrayEntity> readArrayEntityList = aes.getArrayFromFile(PATH);

@@ -389,3 +389,98 @@
 [INFO ] 2022-02-07 01:53:16.186 [main] FileParser - [1;4;56;2] Valid line
 [INFO ] 2022-02-07 01:53:16.186 [main] FileParser - entity parsed ArrayEntity{numbers=[1, 4, 56, 2]}
 [ERROR] 2022-02-07 01:53:16.186 [main] FileParser - [2;we;643] Invalid line
+[INFO ] 2022-02-07 01:57:47.805 [main] FileParser - [28; 255; 3457; 73; -8] Valid line
+[INFO ] 2022-02-07 01:57:47.807 [main] FileParser - entity parsed ArrayEntity{numbers=[28, 255, 3457, 73, -8]}
+[INFO ] 2022-02-07 01:57:47.808 [main] FileParser - [1;4;56;2] Valid line
+[INFO ] 2022-02-07 01:57:47.808 [main] FileParser - entity parsed ArrayEntity{numbers=[1, 4, 56, 2]}
+[ERROR] 2022-02-07 01:57:47.808 [main] FileParser - [2;we;643] Invalid line
+[INFO ] 2022-02-07 01:57:47.818 [main] FileParser - [28; 255; 3457; 73; -8] Valid line
+[INFO ] 2022-02-07 01:57:47.819 [main] FileParser - entity parsed ArrayEntity{numbers=[28, 255, 3457, 73, -8]}
+[INFO ] 2022-02-07 01:57:47.819 [main] FileParser - [1;4;56;2] Valid line
+[INFO ] 2022-02-07 01:57:47.819 [main] FileParser - entity parsed ArrayEntity{numbers=[1, 4, 56, 2]}
+[ERROR] 2022-02-07 01:57:47.820 [main] FileParser - [2;we;643] Invalid line
+[INFO ] 2022-02-07 01:57:47.822 [main] FileParser - [28; 255; 3457; 73; -8] Valid line
+[INFO ] 2022-02-07 01:57:47.822 [main] FileParser - entity parsed ArrayEntity{numbers=[28, 255, 3457, 73, -8]}
+[INFO ] 2022-02-07 01:57:47.822 [main] FileParser - [1;4;56;2] Valid line
+[INFO ] 2022-02-07 01:57:47.823 [main] FileParser - entity parsed ArrayEntity{numbers=[1, 4, 56, 2]}
+[ERROR] 2022-02-07 01:57:47.823 [main] FileParser - [2;we;643] Invalid line
+[INFO ] 2022-02-07 01:57:57.999 [main] FileParser - [28; 255; 3457; 73; -8] Valid line
+[INFO ] 2022-02-07 01:57:58.001 [main] FileParser - entity parsed ArrayEntity{numbers=[28, 255, 3457, 73, -8]}
+[INFO ] 2022-02-07 01:57:58.002 [main] FileParser - [1;4;56;2] Valid line
+[INFO ] 2022-02-07 01:57:58.002 [main] FileParser - entity parsed ArrayEntity{numbers=[1, 4, 56, 2]}
+[ERROR] 2022-02-07 01:57:58.002 [main] FileParser - [2;we;643] Invalid line
+[INFO ] 2022-02-07 01:57:58.013 [main] FileParser - [28; 255; 3457; 73; -8] Valid line
+[INFO ] 2022-02-07 01:57:58.013 [main] FileParser - entity parsed ArrayEntity{numbers=[28, 255, 3457, 73, -8]}
+[INFO ] 2022-02-07 01:57:58.013 [main] FileParser - [1;4;56;2] Valid line
+[INFO ] 2022-02-07 01:57:58.014 [main] FileParser - entity parsed ArrayEntity{numbers=[1, 4, 56, 2]}
+[ERROR] 2022-02-07 01:57:58.014 [main] FileParser - [2;we;643] Invalid line
+[INFO ] 2022-02-07 01:57:58.019 [main] FileParser - [28; 255; 3457; 73; -8] Valid line
+[INFO ] 2022-02-07 01:57:58.019 [main] FileParser - entity parsed ArrayEntity{numbers=[28, 255, 3457, 73, -8]}
+[INFO ] 2022-02-07 01:57:58.019 [main] FileParser - [1;4;56;2] Valid line
+[INFO ] 2022-02-07 01:57:58.020 [main] FileParser - entity parsed ArrayEntity{numbers=[1, 4, 56, 2]}
+[ERROR] 2022-02-07 01:57:58.020 [main] FileParser - [2;we;643] Invalid line
+[INFO ] 2022-02-07 01:57:58.023 [main] FileParser - [28; 255; 3457; 73; -8] Valid line
+[INFO ] 2022-02-07 01:57:58.023 [main] FileParser - entity parsed ArrayEntity{numbers=[28, 255, 3457, 73, -8]}
+[INFO ] 2022-02-07 01:57:58.024 [main] FileParser - [1;4;56;2] Valid line
+[INFO ] 2022-02-07 01:57:58.024 [main] FileParser - entity parsed ArrayEntity{numbers=[1, 4, 56, 2]}
+[ERROR] 2022-02-07 01:57:58.024 [main] FileParser - [2;we;643] Invalid line
+[INFO ] 2022-02-07 01:57:58.026 [main] FileParser - [28; 255; 3457; 73; -8] Valid line
+[INFO ] 2022-02-07 01:57:58.027 [main] FileParser - entity parsed ArrayEntity{numbers=[28, 255, 3457, 73, -8]}
+[INFO ] 2022-02-07 01:57:58.027 [main] FileParser - [1;4;56;2] Valid line
+[INFO ] 2022-02-07 01:57:58.027 [main] FileParser - entity parsed ArrayEntity{numbers=[1, 4, 56, 2]}
+[ERROR] 2022-02-07 01:57:58.028 [main] FileParser - [2;we;643] Invalid line
+[INFO ] 2022-02-07 01:57:58.033 [main] FileParser - [28; 255; 3457; 73; -8] Valid line
+[INFO ] 2022-02-07 01:57:58.033 [main] FileParser - entity parsed ArrayEntity{numbers=[28, 255, 3457, 73, -8]}
+[INFO ] 2022-02-07 01:57:58.033 [main] FileParser - [1;4;56;2] Valid line
+[INFO ] 2022-02-07 01:57:58.034 [main] FileParser - entity parsed ArrayEntity{numbers=[1, 4, 56, 2]}
+[ERROR] 2022-02-07 01:57:58.034 [main] FileParser - [2;we;643] Invalid line
+[INFO ] 2022-02-07 01:57:58.038 [main] FileParser - [28; 255; 3457; 73; -8] Valid line
+[INFO ] 2022-02-07 01:57:58.038 [main] FileParser - entity parsed ArrayEntity{numbers=[28, 255, 3457, 73, -8]}
+[INFO ] 2022-02-07 01:57:58.038 [main] FileParser - [1;4;56;2] Valid line
+[INFO ] 2022-02-07 01:57:58.039 [main] FileParser - entity parsed ArrayEntity{numbers=[1, 4, 56, 2]}
+[ERROR] 2022-02-07 01:57:58.039 [main] FileParser - [2;we;643] Invalid line
+[INFO ] 2022-02-07 01:57:58.042 [main] FileParser - [28; 255; 3457; 73; -8] Valid line
+[INFO ] 2022-02-07 01:57:58.043 [main] FileParser - entity parsed ArrayEntity{numbers=[28, 255, 3457, 73, -8]}
+[INFO ] 2022-02-07 01:57:58.043 [main] FileParser - [1;4;56;2] Valid line
+[INFO ] 2022-02-07 01:57:58.043 [main] FileParser - entity parsed ArrayEntity{numbers=[1, 4, 56, 2]}
+[ERROR] 2022-02-07 01:57:58.043 [main] FileParser - [2;we;643] Invalid line
+[INFO ] 2022-02-07 02:01:28.564 [main] FileParser - [28; 255; 3457; 73; -8] Valid line
+[INFO ] 2022-02-07 02:01:28.567 [main] FileParser - entity parsed ArrayEntity{numbers=[28, 255, 3457, 73, -8]}
+[INFO ] 2022-02-07 02:01:28.567 [main] FileParser - [1;4;56;2] Valid line
+[INFO ] 2022-02-07 02:01:28.568 [main] FileParser - entity parsed ArrayEntity{numbers=[1, 4, 56, 2]}
+[ERROR] 2022-02-07 02:01:28.568 [main] FileParser - [2;we;643] Invalid line
+[INFO ] 2022-02-07 02:01:28.579 [main] FileParser - [28; 255; 3457; 73; -8] Valid line
+[INFO ] 2022-02-07 02:01:28.579 [main] FileParser - entity parsed ArrayEntity{numbers=[28, 255, 3457, 73, -8]}
+[INFO ] 2022-02-07 02:01:28.579 [main] FileParser - [1;4;56;2] Valid line
+[INFO ] 2022-02-07 02:01:28.580 [main] FileParser - entity parsed ArrayEntity{numbers=[1, 4, 56, 2]}
+[ERROR] 2022-02-07 02:01:28.580 [main] FileParser - [2;we;643] Invalid line
+[INFO ] 2022-02-07 02:01:28.584 [main] FileParser - [28; 255; 3457; 73; -8] Valid line
+[INFO ] 2022-02-07 02:01:28.585 [main] FileParser - entity parsed ArrayEntity{numbers=[28, 255, 3457, 73, -8]}
+[INFO ] 2022-02-07 02:01:28.585 [main] FileParser - [1;4;56;2] Valid line
+[INFO ] 2022-02-07 02:01:28.585 [main] FileParser - entity parsed ArrayEntity{numbers=[1, 4, 56, 2]}
+[ERROR] 2022-02-07 02:01:28.586 [main] FileParser - [2;we;643] Invalid line
+[INFO ] 2022-02-07 02:01:28.589 [main] FileParser - [28; 255; 3457; 73; -8] Valid line
+[INFO ] 2022-02-07 02:01:28.589 [main] FileParser - entity parsed ArrayEntity{numbers=[28, 255, 3457, 73, -8]}
+[INFO ] 2022-02-07 02:01:28.589 [main] FileParser - [1;4;56;2] Valid line
+[INFO ] 2022-02-07 02:01:28.589 [main] FileParser - entity parsed ArrayEntity{numbers=[1, 4, 56, 2]}
+[ERROR] 2022-02-07 02:01:28.590 [main] FileParser - [2;we;643] Invalid line
+[INFO ] 2022-02-07 02:01:28.592 [main] FileParser - [28; 255; 3457; 73; -8] Valid line
+[INFO ] 2022-02-07 02:01:28.593 [main] FileParser - entity parsed ArrayEntity{numbers=[28, 255, 3457, 73, -8]}
+[INFO ] 2022-02-07 02:01:28.593 [main] FileParser - [1;4;56;2] Valid line
+[INFO ] 2022-02-07 02:01:28.593 [main] FileParser - entity parsed ArrayEntity{numbers=[1, 4, 56, 2]}
+[ERROR] 2022-02-07 02:01:28.594 [main] FileParser - [2;we;643] Invalid line
+[INFO ] 2022-02-07 02:01:28.599 [main] FileParser - [28; 255; 3457; 73; -8] Valid line
+[INFO ] 2022-02-07 02:01:28.599 [main] FileParser - entity parsed ArrayEntity{numbers=[28, 255, 3457, 73, -8]}
+[INFO ] 2022-02-07 02:01:28.600 [main] FileParser - [1;4;56;2] Valid line
+[INFO ] 2022-02-07 02:01:28.600 [main] FileParser - entity parsed ArrayEntity{numbers=[1, 4, 56, 2]}
+[ERROR] 2022-02-07 02:01:28.600 [main] FileParser - [2;we;643] Invalid line
+[INFO ] 2022-02-07 02:01:28.604 [main] FileParser - [28; 255; 3457; 73; -8] Valid line
+[INFO ] 2022-02-07 02:01:28.604 [main] FileParser - entity parsed ArrayEntity{numbers=[28, 255, 3457, 73, -8]}
+[INFO ] 2022-02-07 02:01:28.604 [main] FileParser - [1;4;56;2] Valid line
+[INFO ] 2022-02-07 02:01:28.604 [main] FileParser - entity parsed ArrayEntity{numbers=[1, 4, 56, 2]}
+[ERROR] 2022-02-07 02:01:28.605 [main] FileParser - [2;we;643] Invalid line
+[INFO ] 2022-02-07 02:01:28.607 [main] FileParser - [28; 255; 3457; 73; -8] Valid line
+[INFO ] 2022-02-07 02:01:28.608 [main] FileParser - entity parsed ArrayEntity{numbers=[28, 255, 3457, 73, -8]}
+[INFO ] 2022-02-07 02:01:28.608 [main] FileParser - [1;4;56;2] Valid line
+[INFO ] 2022-02-07 02:01:28.609 [main] FileParser - entity parsed ArrayEntity{numbers=[1, 4, 56, 2]}
+[ERROR] 2022-02-07 02:01:28.609 [main] FileParser - [2;we;643] Invalid line

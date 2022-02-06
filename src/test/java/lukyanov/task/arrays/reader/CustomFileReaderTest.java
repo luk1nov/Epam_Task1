@@ -3,6 +3,7 @@ package lukyanov.task.arrays.reader;
 import lukyanov.task.arrays.exception.CustomException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ class CustomFileReaderTest {
     private final CustomFileReader customFileReader = new CustomFileReader();
 
     @Test
+    @DisplayName("readFile")
     void readFile() {
         try {
             List<String> readStringList = customFileReader.readFile(PATH);

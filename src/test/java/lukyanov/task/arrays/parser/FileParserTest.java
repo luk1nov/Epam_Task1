@@ -6,6 +6,7 @@ import lukyanov.task.arrays.reader.CustomFileReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ class FileParserTest {
     private static final String PATH = "resources/file/numbers.txt";
 
     @Test
+    @DisplayName("parseFile")
     void parseFile() {
         try {
             int[] expectedArray = {28, 255, 3457, 73, -8};
