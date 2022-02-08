@@ -17,7 +17,7 @@ public class ArrayEntity {
     }
 
     public ArrayEntity(int[] numbers) {
-        this.numbers = numbers;
+        this.numbers = Arrays.copyOf(numbers, numbers.length);
     }
 
     public int[] getNumbers() {
