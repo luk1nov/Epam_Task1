@@ -1,8 +1,8 @@
-package lukyanov.task.arrays.actions;
+package lukyanov.task.arrays.action;
 
 import lukyanov.task.arrays.entity.ArrayEntity;
 
-public interface ArrayActions {
+public interface ArrayAction {
 
     int getMinValue(ArrayEntity arrayEntity);
 

@@ -1,4 +1,4 @@
-package lukyanov.task.arrays.actions.impl;
+package lukyanov.task.arrays.action.impl;
 
 import lukyanov.task.arrays.entity.ArrayEntity;
 import lukyanov.task.arrays.exception.CustomException;

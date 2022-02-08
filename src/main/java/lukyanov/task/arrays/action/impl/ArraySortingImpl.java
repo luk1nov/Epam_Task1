@@ -1,7 +1,7 @@
-package lukyanov.task.arrays.actions.impl;
+package lukyanov.task.arrays.action.impl;
 
 import lukyanov.task.arrays.entity.ArrayEntity;
-import lukyanov.task.arrays.actions.ArraySorting;
+import lukyanov.task.arrays.action.ArraySorting;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

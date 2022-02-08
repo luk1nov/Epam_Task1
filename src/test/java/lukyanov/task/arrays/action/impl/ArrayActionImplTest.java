@@ -1,4 +1,4 @@
-package lukyanov.task.arrays.actions.impl;
+package lukyanov.task.arrays.action.impl;
 
 import lukyanov.task.arrays.entity.ArrayEntity;
 import lukyanov.task.arrays.exception.CustomException;
@@ -12,7 +12,7 @@ import java.util.stream.IntStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ArrayActionsImplTest {
+class ArrayActionImplTest {
     private ArrayEntity arrayEntity = new ArrayEntity();
     private final ArrayActionImpl action = new ArrayActionImpl();
     private static final Logger logger = LogManager.getLogger(ArraySortingImplTest.class);

@@ -1,4 +1,4 @@
-package lukyanov.task.arrays.actions;
+package lukyanov.task.arrays.action;
 
 import lukyanov.task.arrays.entity.ArrayEntity;
 

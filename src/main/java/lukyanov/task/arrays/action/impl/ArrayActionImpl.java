@@ -1,6 +1,6 @@
-package lukyanov.task.arrays.actions.impl;
+package lukyanov.task.arrays.action.impl;
 
-import lukyanov.task.arrays.actions.ArrayActions;
+import lukyanov.task.arrays.action.ArrayAction;
 import lukyanov.task.arrays.entity.ArrayEntity;
 
 import java.util.Arrays;
@@ -8,7 +8,7 @@ import java.util.OptionalDouble;
 import java.util.OptionalInt;
 import java.util.stream.IntStream;
 
-public class ArrayActionImpl implements ArrayActions {
+public class ArrayActionImpl implements ArrayAction {
 
     public IntStream convertToIntStream(ArrayEntity arrayEntity){
         int[] numbers = arrayEntity.getNumbers();
