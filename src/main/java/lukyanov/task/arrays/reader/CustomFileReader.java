@@ -16,9 +16,9 @@ public class CustomFileReader {
 
         try (BufferedReader reader = new BufferedReader(new FileReader(file)) ) {
             return reader.lines().collect(Collectors.toList());
-        } catch (FileNotFoundException e) {
-            logger.error(e.getMessage());
-            throw new CustomException("File is not found", e);
+        } catch (FileNotFoundException ex) {
+            logger.error("File " + path +" is not found", ex.getMessage());
+            throw new CustomException(ex);
         } catch (IOException e) {
             logger.error(e.getMessage());
             throw new CustomException(e.getMessage());

@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FileParser {
+    private static final String ARRAY_SPLITTER = ";";
     private static final Logger logger = LogManager.getLogger(FileParser.class);
 
     public List<ArrayEntity> parseFile(List<String> lines){
@@ -28,14 +29,14 @@ public class FileParser {
 
     private ArrayEntity parseLine(String line){
         ArrayEntity arrayEntity;
-        List<String> splitArray = Arrays.asList(line.split(";"));
+        List<String> splitArray = Arrays.asList(line.split(ARRAY_SPLITTER));
         arrayEntity = new ArrayEntity(parseToArray(splitArray));
         logger.info("entity parsed " + arrayEntity);
         return arrayEntity;
     }
 
     private static int[] parseToArray(List<String> list){
-        if(list.size() == 1 && list.get(0).trim().isEmpty()){
+        if(list.size() == 1 && list.get(0).isBlank()){
             return new int[0];
         }
         int[] array = new int[list.size()];

@@ -16,24 +16,21 @@ public class ArrayActionImpl implements ArrayAction {
     }
 
     @Override
-    public int getMinValue(ArrayEntity arrayEntity) {
+    public OptionalInt getMinValue(ArrayEntity arrayEntity) {
         IntStream minimum = convertToIntStream(arrayEntity);
-        OptionalInt min1 = minimum.min();
-        return min1.getAsInt();
+        return minimum.min();
     }
 
     @Override
-    public int getMaxValue(ArrayEntity arrayEntity) {
+    public OptionalInt getMaxValue(ArrayEntity arrayEntity) {
         IntStream maximum = convertToIntStream(arrayEntity);
-        OptionalInt max1 = maximum.max();
-        return max1.getAsInt();
+        return maximum.max();
     }
 
     @Override
-    public double getAvgValue(ArrayEntity arrayEntity) {
+    public OptionalDouble getAvgValue(ArrayEntity arrayEntity) {
         IntStream avg = convertToIntStream(arrayEntity);
-        OptionalDouble avg1 = avg.average();
-        return avg1.getAsDouble();
+        return avg.average();
     }
 
     @Override

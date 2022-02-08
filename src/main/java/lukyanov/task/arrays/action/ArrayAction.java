@@ -2,13 +2,16 @@ package lukyanov.task.arrays.action;
 
 import lukyanov.task.arrays.entity.ArrayEntity;
 
+import java.util.OptionalDouble;
+import java.util.OptionalInt;
+
 public interface ArrayAction {
 
-    int getMinValue(ArrayEntity arrayEntity);
+    OptionalInt getMinValue(ArrayEntity arrayEntity);
 
-    int getMaxValue(ArrayEntity arrayEntity);
+    OptionalInt getMaxValue(ArrayEntity arrayEntity);
 
-    double getAvgValue(ArrayEntity arrayEntity);
+    OptionalDouble getAvgValue(ArrayEntity arrayEntity);
 
     int getSummary(ArrayEntity arrayEntity);
 
