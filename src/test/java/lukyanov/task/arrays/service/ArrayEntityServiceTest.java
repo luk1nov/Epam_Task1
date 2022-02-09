@@ -4,7 +4,6 @@ import lukyanov.task.arrays.entity.ArrayEntity;
 import lukyanov.task.arrays.exception.CustomException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -15,8 +14,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class ArrayEntityServiceTest {
 
     private final ArrayEntityService aes = new ArrayEntityService();
-    private static final String PATH = "resources/file/numbers.txt";
     private final int[] expectedArray = {28, 255, 3457, 73, -8};
+    private static final String PATH = "resources/file/numbers.txt";
     private static final Logger logger = LogManager.getLogger(ArrayEntityServiceTest.class);
 
     @Test

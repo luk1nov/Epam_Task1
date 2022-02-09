@@ -17,8 +17,8 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FileParserTest {
-    private static final Logger logger = LogManager.getLogger(FileParserTest.class);
     private final FileParser fileParser = new FileParser();
+    private static final Logger logger = LogManager.getLogger(FileParserTest.class);
     private static final String PATH = "resources/file/numbers.txt";
 
     @Test

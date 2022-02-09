@@ -12,9 +12,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CustomFileReaderTest {
+    private final CustomFileReader customFileReader = new CustomFileReader();
     private static final Logger logger = LogManager.getLogger(CustomFileReaderTest.class);
     private static final String PATH = "resources/file/numbers.txt";
-    private final CustomFileReader customFileReader = new CustomFileReader();
 
     @Test
     @DisplayName("readFile")

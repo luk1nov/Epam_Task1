@@ -1,12 +1,9 @@
 package lukyanov.task.arrays.entity;
 
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Objects;
 
 public class ArrayEntity {
     private static final Logger logger = LogManager.getLogger(ArrayEntity.class);

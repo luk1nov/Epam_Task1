@@ -15,9 +15,9 @@ import java.util.stream.IntStream;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ArrayActionImplTest {
-    private ArrayEntity arrayEntity = new ArrayEntity();
     private final ArrayActionImpl action = new ArrayActionImpl();
     private static final Logger logger = LogManager.getLogger(ArraySortingImplTest.class);
+    private ArrayEntity arrayEntity = new ArrayEntity();
 
 
     @BeforeEach
