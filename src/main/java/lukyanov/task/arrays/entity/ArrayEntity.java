@@ -28,6 +28,10 @@ public class ArrayEntity {
         this.numbers = numbers;
     }
 
+    public int getLength(){
+        return numbers.length;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
