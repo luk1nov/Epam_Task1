@@ -8,6 +8,8 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
 
 import java.util.List;
+import java.util.OptionalDouble;
+import java.util.OptionalInt;
 import java.util.stream.IntStream;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -37,43 +39,43 @@ class ArrayActionImplTest {
     @Test
     @DisplayName("arrayMin")
     void getMinValue() {
-        assertEquals(action.getMinValue(arrayEntity), -8);
+        assertEquals(OptionalInt.of(-8), action.getMinValue(arrayEntity));
     }
 
     @Test
     @DisplayName("arrayMax")
     void getMaxValue() {
-        assertEquals(action.getMaxValue(arrayEntity), 3457);
+        assertEquals( OptionalInt.of(3457), action.getMaxValue(arrayEntity));
     }
 
     @Test
     @DisplayName("arrayAvg")
     void getAvgValue() {
-        assertEquals(action.getAvgValue(arrayEntity), 761);
+        assertEquals(OptionalDouble.of(761), action.getAvgValue(arrayEntity));
     }
 
     @Test
     @DisplayName("arraySum")
     void getSummary() {
-        assertEquals(action.getSummary(arrayEntity), 3805);
+        assertEquals(3805, action.getSummary(arrayEntity));
     }
 
     @Test
     @DisplayName("plusElements")
     void getNumberOfPlusElements() {
-        assertEquals(action.getNumberOfPlusElements(arrayEntity), 4);
+        assertEquals(4, action.getNumberOfPlusElements(arrayEntity));
     }
 
     @Test
     @DisplayName("minusElements")
     void getNumberOfMinusElements() {
-        assertEquals(action.getNumberOfMinusElements(arrayEntity), 1);
+        assertEquals(1, action.getNumberOfMinusElements(arrayEntity));
     }
 
     @Test
     @DisplayName("replaceElements")
     void replaceElement() {
         ArrayEntity expectedArrayEntity = new ArrayEntity(new int[]{28, 255, 3457, 73, 10});
-        assertArrayEquals(action.replaceElement(arrayEntity, -8, 10).getNumbers(), expectedArrayEntity.getNumbers());
+        assertArrayEquals(expectedArrayEntity.getNumbers(), action.replaceElement(arrayEntity, -8, 10).getNumbers());
     }
 }

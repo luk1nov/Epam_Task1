@@ -26,8 +26,8 @@ class CustomFileReaderTest {
             expectedStringList.add("28; 255; 3457; 73; -8");
             expectedStringList.add("2;we;643");
 
-            assertEquals(expectedStringList.get(0), readStringList.get(0).trim());
-            assertEquals(expectedStringList.get(1), readStringList.get(2).trim());
+            assertEquals(readStringList.get(0).trim(), expectedStringList.get(0));
+            assertEquals(readStringList.get(2).trim(), expectedStringList.get(1));
         } catch (CustomException e) {
             logger.error(e.getMessage());
         }

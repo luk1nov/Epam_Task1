@@ -31,7 +31,7 @@ class FileParserTest {
             List<String> stringList = customFileReader.readFile(PATH);
             List<ArrayEntity> realArrayEntityList = fileParser.parseFile(stringList);
 
-            Assertions.assertArrayEquals(realArrayEntityList.get(0).getNumbers(), expectedArray);
+            Assertions.assertArrayEquals(expectedArray, realArrayEntityList.get(0).getNumbers());
 
         } catch (CustomException e) {
             logger.error(e.getMessage());

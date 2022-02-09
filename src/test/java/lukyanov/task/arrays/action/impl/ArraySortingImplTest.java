@@ -32,18 +32,18 @@ class ArraySortingImplTest {
     @Test
     @DisplayName("bubbleSort")
     void bubbleSort() {
-        assertArrayEquals(sorting.bubbleSort(arrayEntity).getNumbers(), expectedArrayNumbers);
+        assertArrayEquals(expectedArrayNumbers, sorting.bubbleSort(arrayEntity).getNumbers() );
     }
 
     @Test
     @DisplayName("selectionSort")
     void selectionSort() {
-        assertArrayEquals(sorting.selectionSort(arrayEntity).getNumbers(), expectedArrayNumbers);
+        assertArrayEquals(expectedArrayNumbers, sorting.selectionSort(arrayEntity).getNumbers());
     }
 
     @Test
     @DisplayName("insertionSort")
     void insertionSort() {
-        assertArrayEquals(sorting.insertionSort(arrayEntity).getNumbers(), expectedArrayNumbers);
+        assertArrayEquals(expectedArrayNumbers, sorting.insertionSort(arrayEntity).getNumbers());
     }
 }

@@ -16,6 +16,7 @@ public class FileParser {
     public List<ArrayEntity> parseFile(List<String> lines){
         List<ArrayEntity> arrayEntityList = new ArrayList<>();
         for (String line : lines) {
+            line = line.trim();
             if (NumberValidation.validateLine(line)){
                 logger.info("[" + line + "] Valid line");
                 arrayEntityList.add(parseLine(line));

@@ -53,6 +53,9 @@ public class ArrayActionImpl implements ArrayAction {
 
     @Override
     public ArrayEntity replaceElement(ArrayEntity arrayEntity, int desiredElement, int newElement) {
+        if (arrayEntity.getLength() == 0){
+            return arrayEntity;
+        }
         ArrayEntity newArrayEntity;
         int[] numbers = arrayEntity.getNumbers();
         IntStream minus = IntStream.of(numbers).map(i -> {
