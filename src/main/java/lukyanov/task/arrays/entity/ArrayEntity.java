@@ -1,11 +1,13 @@
 package lukyanov.task.arrays.entity;
 
+import lukyanov.task.arrays.observer.Observable;
+import lukyanov.task.arrays.observer.Observer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 
-public class ArrayEntity {
+public class ArrayEntity implements Observable {
     private static final Logger logger = LogManager.getLogger(ArrayEntity.class);
     private int[] numbers;
 
@@ -27,6 +29,21 @@ public class ArrayEntity {
 
     public int getLength(){
         return numbers.length;
+    }
+
+    @Override
+    public void attach(Observer observer) {
+
+    }
+
+    @Override
+    public void detach(Observer observer) {
+
+    }
+
+    @Override
+    public void notifyObserver() {
+
     }
 
     @Override
