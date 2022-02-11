@@ -5,17 +5,22 @@ import lukyanov.task.arrays.observer.Observer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
-public class ArrayEntity implements Observable {
+public class ArrayEntity extends AbstractArrayEntity implements Observable {
     private static final Logger logger = LogManager.getLogger(ArrayEntity.class);
     private int[] numbers;
+    private List<Observer> observers = new ArrayList<>();
+
 
     public ArrayEntity() {
-
+        super();
     }
 
     public ArrayEntity(int[] numbers) {
+        super();
         this.numbers = Arrays.copyOf(numbers, numbers.length);
     }
 
@@ -33,17 +38,21 @@ public class ArrayEntity implements Observable {
 
     @Override
     public void attach(Observer observer) {
-
+        observers.remove(observer);
     }
 
     @Override
     public void detach(Observer observer) {
-
+        if(observer != null){
+            observers.add(observer);
+        }
     }
 
     @Override
     public void notifyObserver() {
-
+        ArrayEntityEvent arrayEntityEvent = new ArrayEntityEvent(this);
+        for (Observer observer: observers) {
+        }
     }
 
     @Override
