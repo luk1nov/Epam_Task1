@@ -1,21 +1,13 @@
 package lukyanov.task.arrays;
 
-import lukyanov.task.arrays.entity.ArrayEntity;
 import lukyanov.task.arrays.exception.CustomException;
-import lukyanov.task.arrays.observer.ArrayEvent;
-import lukyanov.task.arrays.observer.ArrayObserver;
 import lukyanov.task.arrays.observer.impl.ArrayObserverImpl;
-import lukyanov.task.arrays.observer.impl.NewObserver;
 import lukyanov.task.arrays.parser.FileParser;
 import lukyanov.task.arrays.repository.ArrayRepository;
 import lukyanov.task.arrays.repository.impl.ArrayRepositoryImpl;
 import lukyanov.task.arrays.service.ArrayEntityService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.List;
 
 public class Main {
     private static final String PATH = "resources/file/numbers.txt";
@@ -28,7 +20,6 @@ public class Main {
             ArrayRepository repository = new ArrayRepositoryImpl();
             repository.addAllArrays(aes.getArrayFromFile(PATH));
             repository.get(0).attach(new ArrayObserverImpl());
-            repository.get(0).attach(new NewObserver());
             repository.get(0).setNumbers(1,2,3,4);
         } catch (CustomException e) {
             e.printStackTrace();
