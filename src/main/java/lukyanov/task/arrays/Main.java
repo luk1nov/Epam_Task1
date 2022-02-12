@@ -5,6 +5,7 @@ import lukyanov.task.arrays.exception.CustomException;
 import lukyanov.task.arrays.observer.ArrayEvent;
 import lukyanov.task.arrays.observer.ArrayObserver;
 import lukyanov.task.arrays.observer.impl.ArrayObserverImpl;
+import lukyanov.task.arrays.observer.impl.NewObserver;
 import lukyanov.task.arrays.parser.FileParser;
 import lukyanov.task.arrays.repository.ArrayRepository;
 import lukyanov.task.arrays.repository.impl.ArrayRepositoryImpl;
@@ -26,8 +27,8 @@ public class Main {
         try {
             ArrayRepository repository = new ArrayRepositoryImpl();
             repository.addAllArrays(aes.getArrayFromFile(PATH));
-            ArrayObserverImpl observer = new ArrayObserverImpl();
-            repository.get(0).attach(observer);
+            repository.get(0).attach(new ArrayObserverImpl());
+            repository.get(0).attach(new NewObserver());
             repository.get(0).setNumbers(1,2,3,4);
         } catch (CustomException e) {
             e.printStackTrace();

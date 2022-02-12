@@ -3,7 +3,6 @@ package lukyanov.task.arrays.entity;
 import lukyanov.task.arrays.observer.ArrayEvent;
 import lukyanov.task.arrays.observer.ArrayObservable;
 import lukyanov.task.arrays.observer.ArrayObserver;
-import lukyanov.task.arrays.observer.impl.ArrayObserverImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -11,10 +10,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ArrayEntity extends AbstractArrayEntity implements ArrayObservable<ArrayObserverImpl> {
+public class ArrayEntity extends AbstractArrayEntity implements ArrayObservable {
     private static final Logger logger = LogManager.getLogger(ArrayEntity.class);
     private int[] numbers;
-    private List<ArrayObserverImpl> observers = new ArrayList<>();
+    private List<ArrayObserver> observers = new ArrayList<>();
 
 
     public ArrayEntity() {
@@ -44,13 +43,14 @@ public class ArrayEntity extends AbstractArrayEntity implements ArrayObservable<
         return numbers.length;
     }
 
+
     @Override
-    public void attach(ArrayObserverImpl observer) {
+    public void attach(ArrayObserver observer) {
         observers.add(observer);
     }
 
     @Override
-    public void detach(ArrayObserverImpl observer) {
+    public void detach(ArrayObserver observer) {
         observers.remove(observer);
     }
 
@@ -58,7 +58,7 @@ public class ArrayEntity extends AbstractArrayEntity implements ArrayObservable<
     public void notifyObserver() {
         ArrayEvent event = new ArrayEvent(this);
         if (!observers.isEmpty()) {
-            for (ArrayObserverImpl observer : observers) {
+            for (ArrayObserver observer : observers) {
                 observer.updateAvgValue(event);
                 observer.updateSumValue(event);
             }
