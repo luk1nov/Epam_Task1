@@ -1,7 +1,8 @@
 package lukyanov.task.arrays.entity;
 
-import lukyanov.task.arrays.observer.Observable;
-import lukyanov.task.arrays.observer.Observer;
+import lukyanov.task.arrays.observer.ArrayEvent;
+import lukyanov.task.arrays.observer.ArrayObservable;
+import lukyanov.task.arrays.observer.ArrayObserver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -9,14 +10,19 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ArrayEntity extends AbstractArrayEntity implements Observable {
+public class ArrayEntity extends AbstractArrayEntity implements ArrayObservable {
     private static final Logger logger = LogManager.getLogger(ArrayEntity.class);
     private int[] numbers;
-    private List<Observer> observers = new ArrayList<>();
+    private List<ArrayObserver> observers = new ArrayList<>();
 
 
     public ArrayEntity() {
         super();
+    }
+
+    public ArrayEntity(int id, int[] numbers) {
+        super(id);
+        this.numbers = Arrays.copyOf(numbers, numbers.length);
     }
 
     public ArrayEntity(int[] numbers) {
@@ -37,12 +43,12 @@ public class ArrayEntity extends AbstractArrayEntity implements Observable {
     }
 
     @Override
-    public void attach(Observer observer) {
+    public void attach(ArrayObserver observer) {
         observers.remove(observer);
     }
 
     @Override
-    public void detach(Observer observer) {
+    public void detach(ArrayObserver observer) {
         if(observer != null){
             observers.add(observer);
         }
@@ -50,8 +56,8 @@ public class ArrayEntity extends AbstractArrayEntity implements Observable {
 
     @Override
     public void notifyObserver() {
-        ArrayEntityEvent arrayEntityEvent = new ArrayEntityEvent(this);
-        for (Observer observer: observers) {
+        ArrayEvent arrayEvent = new ArrayEvent(this);
+        for (ArrayObserver arrayObserver : observers) {
         }
     }
 
