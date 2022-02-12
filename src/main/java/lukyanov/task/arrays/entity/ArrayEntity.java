@@ -3,6 +3,7 @@ package lukyanov.task.arrays.entity;
 import lukyanov.task.arrays.observer.ArrayEvent;
 import lukyanov.task.arrays.observer.ArrayObservable;
 import lukyanov.task.arrays.observer.ArrayObserver;
+import lukyanov.task.arrays.observer.impl.ArrayObserverImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -10,10 +11,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ArrayEntity extends AbstractArrayEntity implements ArrayObservable {
+public class ArrayEntity extends AbstractArrayEntity implements ArrayObservable<ArrayObserverImpl> {
     private static final Logger logger = LogManager.getLogger(ArrayEntity.class);
     private int[] numbers;
-    private List<ArrayObserver> observers = new ArrayList<>();
+    private List<ArrayObserverImpl> observers = new ArrayList<>();
 
 
     public ArrayEntity() {
@@ -22,20 +23,21 @@ public class ArrayEntity extends AbstractArrayEntity implements ArrayObservable 
 
     public ArrayEntity(int id, int[] numbers) {
         super(id);
-        this.numbers = Arrays.copyOf(numbers, numbers.length);
+        this.numbers = numbers.clone();
     }
 
     public ArrayEntity(int[] numbers) {
         super();
-        this.numbers = Arrays.copyOf(numbers, numbers.length);
+        this.numbers = numbers.clone();
     }
 
     public int[] getNumbers() {
-        return Arrays.copyOf(numbers, numbers.length);
+        return numbers.clone();
     }
 
-    public void setNumbers(int[] numbers) {
-        this.numbers = numbers;
+    public void setNumbers(int... numbers) {
+        this.numbers = numbers.clone();
+        notifyObserver();
     }
 
     public int getLength(){
@@ -43,21 +45,23 @@ public class ArrayEntity extends AbstractArrayEntity implements ArrayObservable 
     }
 
     @Override
-    public void attach(ArrayObserver observer) {
+    public void attach(ArrayObserverImpl observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void detach(ArrayObserverImpl observer) {
         observers.remove(observer);
     }
 
     @Override
-    public void detach(ArrayObserver observer) {
-        if(observer != null){
-            observers.add(observer);
-        }
-    }
-
-    @Override
     public void notifyObserver() {
-        ArrayEvent arrayEvent = new ArrayEvent(this);
-        for (ArrayObserver arrayObserver : observers) {
+        ArrayEvent event = new ArrayEvent(this);
+        if (!observers.isEmpty()) {
+            for (ArrayObserverImpl observer : observers) {
+                observer.updateAvgValue(event);
+                observer.updateSumValue(event);
+            }
         }
     }
 
