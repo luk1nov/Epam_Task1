@@ -1,34 +1,47 @@
 package lukyanov.task.arrays.entity;
 
+import lukyanov.task.arrays.action.impl.ArrayActionImpl;
+
 import java.util.Objects;
+import java.util.Optional;
+import java.util.OptionalDouble;
+import java.util.OptionalInt;
 
 public class ArrayStatistics {
-    private int max;
-    private int min;
-    private double avg;
+    private Integer max;
+    private Integer min;
+    private Double avg;
     private int sum;
 
     public ArrayStatistics() {
     }
 
-    public int getMax() {
-        return max;
+    public ArrayStatistics(int max, int min, double avg, int sum) {
+        this.max = max;
+        this.min = min;
+        this.avg = avg;
+        this.sum = sum;
+    }
+
+    public Optional<Integer> getMax() {
+        return Optional.ofNullable(max);
     }
 
     public void setMax(int max) {
         this.max = max;
     }
 
-    public int getMin() {
-        return min;
+    public Optional<Integer> getMin() {
+        return Optional.ofNullable(min);
     }
+
 
     public void setMin(int min) {
         this.min = min;
     }
 
-    public double getAvg() {
-        return avg;
+    public Optional<Double> getAvg() {
+        return Optional.ofNullable(avg);
     }
 
     public void setAvg(double avg) {

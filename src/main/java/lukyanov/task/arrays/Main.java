@@ -1,13 +1,17 @@
 package lukyanov.task.arrays;
 
+import lukyanov.task.arrays.entity.ArrayEntity;
 import lukyanov.task.arrays.exception.CustomException;
-import lukyanov.task.arrays.observer.impl.ArrayObserverImpl;
 import lukyanov.task.arrays.parser.FileParser;
-import lukyanov.task.arrays.repository.ArrayRepository;
+import lukyanov.task.arrays.repository.Specification;
 import lukyanov.task.arrays.repository.impl.ArrayRepositoryImpl;
-import lukyanov.task.arrays.service.ArrayEntityService;
+import lukyanov.task.arrays.repository.impl.SumSpecification;
+import lukyanov.task.arrays.service.CustomArrayListService;
+import lukyanov.task.arrays.service.impl.CustomRepositoryServiceImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.List;
 
 public class Main {
     private static final String PATH = "resources/file/numbers.txt";
@@ -15,12 +19,16 @@ public class Main {
 
 
     public static void main(String[] args) {
-        ArrayEntityService aes = new ArrayEntityService();
         try {
-            ArrayRepository repository = new ArrayRepositoryImpl();
-            repository.addAllArrays(aes.getArrayFromFile(PATH));
-            repository.get(0).attach(new ArrayObserverImpl());
-            repository.get(0).setNumbers(1,2,3,4);
+            ArrayRepositoryImpl repository = ArrayRepositoryImpl.getInstance();
+            CustomArrayListService service = new CustomArrayListService();
+            List<ArrayEntity> list = service.getArrayFromFile(PATH);
+            CustomRepositoryServiceImpl crs = new CustomRepositoryServiceImpl();
+            crs.addListInRepo(list);
+
+            Specification specification = new SumSpecification(-2);
+            logger.info(repository.query(specification));
+
         } catch (CustomException e) {
             e.printStackTrace();
         }

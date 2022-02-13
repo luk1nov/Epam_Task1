@@ -1,6 +1,7 @@
 package lukyanov.task.arrays.parser;
 
 import lukyanov.task.arrays.entity.ArrayEntity;
+import lukyanov.task.arrays.service.IdGenerator;
 import lukyanov.task.arrays.validation.NumberValidation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -30,7 +31,8 @@ public class FileParser {
             line = line.trim();
             if (NumberValidation.validateLine(line)){
                 logger.info("[" + line + "] Valid line");
-                arrayEntityList.add(parseLine(line));
+                ArrayEntity array = parseLine(line);
+                arrayEntityList.add(array);
             } else {
                 logger.error("[" + line + "] Invalid line");
             }
@@ -42,7 +44,7 @@ public class FileParser {
     private ArrayEntity parseLine(String line){
         ArrayEntity arrayEntity;
         List<String> splitArray = Arrays.asList(line.split(ARRAY_SPLITTER));
-        arrayEntity = new ArrayEntity(parseToArray(splitArray));
+        arrayEntity = new ArrayEntity(IdGenerator.idGenerate(), parseToArray(splitArray));
         logger.info("entity parsed " + arrayEntity);
         return arrayEntity;
     }

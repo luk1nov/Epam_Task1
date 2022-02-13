@@ -3,6 +3,7 @@ package lukyanov.task.arrays.entity;
 import lukyanov.task.arrays.observer.ArrayEvent;
 import lukyanov.task.arrays.observer.ArrayObservable;
 import lukyanov.task.arrays.observer.ArrayObserver;
+import lukyanov.task.arrays.observer.impl.ArrayObserverImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,7 +21,7 @@ public class ArrayEntity extends AbstractArrayEntity implements ArrayObservable 
         super();
     }
 
-    public ArrayEntity(int id, int[] numbers) {
+    public ArrayEntity(long id, int[] numbers) {
         super(id);
         this.numbers = numbers.clone();
     }
@@ -59,8 +60,13 @@ public class ArrayEntity extends AbstractArrayEntity implements ArrayObservable 
         ArrayEvent event = new ArrayEvent(this);
         if (!observers.isEmpty()) {
             for (ArrayObserver observer : observers) {
+                if(this.getLength() == 0){
+                    observer.replaceStatistic(event);
+                }
                 observer.updateAvgValue(event);
                 observer.updateSumValue(event);
+                observer.updateMaxValue(event);
+                observer.updateMinValue(event);
             }
         }
     }

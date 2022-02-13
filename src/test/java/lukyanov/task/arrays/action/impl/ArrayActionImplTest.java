@@ -2,7 +2,7 @@ package lukyanov.task.arrays.action.impl;
 
 import lukyanov.task.arrays.entity.ArrayEntity;
 import lukyanov.task.arrays.exception.CustomException;
-import lukyanov.task.arrays.service.ArrayEntityService;
+import lukyanov.task.arrays.service.CustomArrayListService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
@@ -23,7 +23,7 @@ class ArrayActionImplTest {
     @BeforeEach
     @DisplayName("arrayServiceMethod")
     public void arrayServiceMethod() throws CustomException {
-        ArrayEntityService aes = new ArrayEntityService();
+        CustomArrayListService aes = new CustomArrayListService();
         String path = "resources/file/numbers.txt";
         List<ArrayEntity> arrayEntityList = aes.getArrayFromFile(path);
         arrayEntity = arrayEntityList.get(0);

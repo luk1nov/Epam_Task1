@@ -24,10 +24,6 @@ public class Warehouse {
         return instance;
     }
 
-    public int getWarehouseSize(){
-        return mapStatistics.size();
-    }
-
     public ArrayStatistics getById(long arrayId) throws CustomException {
         if (mapStatistics.containsKey(arrayId)) {
             ArrayStatistics statistics = mapStatistics.get(arrayId);
@@ -51,5 +47,20 @@ public class Warehouse {
         }
     }
 
+    public ArrayStatistics clearValue(long arrayId) throws CustomException {
+        if(mapStatistics.containsKey(arrayId)){
+            return mapStatistics.replace(arrayId, new ArrayStatistics());
+        } else {
+            logger.error("element with id(" + arrayId + ") not found");
+            throw new CustomException("element with id(" + arrayId + ") not found");
+        }
+    }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Warehouse{");
+        sb.append("mapStatistics=").append(mapStatistics);
+        sb.append('}');
+        return sb.toString();
+    }
 }

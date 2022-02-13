@@ -2,6 +2,7 @@ package lukyanov.task.arrays.action.impl;
 
 import lukyanov.task.arrays.action.ArrayAction;
 import lukyanov.task.arrays.entity.ArrayEntity;
+import lukyanov.task.arrays.entity.Warehouse;
 
 import java.util.Arrays;
 import java.util.OptionalDouble;
@@ -9,6 +10,16 @@ import java.util.OptionalInt;
 import java.util.stream.IntStream;
 
 public class ArrayActionImpl implements ArrayAction {
+
+    private static ArrayActionImpl instance;
+
+    public static ArrayActionImpl getInstance(){
+        if(instance == null){
+            instance = new ArrayActionImpl();
+        }
+        return instance;
+    }
+
 
     public IntStream convertToIntStream(ArrayEntity arrayEntity){
         int[] numbers = arrayEntity.getNumbers();

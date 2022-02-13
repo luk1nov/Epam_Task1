@@ -11,12 +11,12 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ArrayEntityServiceTest {
+class CustomArrayListServiceTest {
 
-    private final ArrayEntityService aes = new ArrayEntityService();
+    private final CustomArrayListService aes = new CustomArrayListService();
     private final int[] expectedArray = {28, 255, 3457, 73, -8};
     private static final String PATH = "resources/file/numbers.txt";
-    private static final Logger logger = LogManager.getLogger(ArrayEntityServiceTest.class);
+    private static final Logger logger = LogManager.getLogger(CustomArrayListServiceTest.class);
 
     @Test
     @DisplayName("getArrayFromFile")

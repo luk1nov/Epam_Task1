@@ -4,17 +4,27 @@ import lukyanov.task.arrays.entity.ArrayEntity;
 import lukyanov.task.arrays.repository.ArrayRepository;
 import lukyanov.task.arrays.repository.Specification;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ArrayRepositoryImpl implements ArrayRepository {
-    List<ArrayEntity> arrays;
+    private static ArrayRepositoryImpl instance;
+    private List<ArrayEntity> arrays;
 
     public ArrayRepositoryImpl() {
         arrays = new ArrayList<>();
+    }
+
+    public static ArrayRepositoryImpl getInstance(){
+        if(instance == null){
+            instance = new ArrayRepositoryImpl();
+        }
+        return instance;
+    }
+
+
+    public int getSize(){
+        return arrays.size();
     }
 
     @Override
@@ -51,16 +61,18 @@ public class ArrayRepositoryImpl implements ArrayRepository {
     @Override
     public List<? super ArrayEntity> query(Specification specification) {
         List<ArrayEntity> list = arrays.stream().
-                filter(i -> specification.specify(i)).
+                filter(specification::specify).
                 collect(Collectors.toList());
         return list;
     }
 
     @Override
-    public List sort(Comparator<? super ArrayEntity> comparator) {
+    public List<ArrayEntity> sort(Comparator<? super ArrayEntity> comparator) {
         List<ArrayEntity> list = arrays.stream()
                 .sorted(comparator)
                 .collect(Collectors.toList());
         return list;
     }
+
+
 }

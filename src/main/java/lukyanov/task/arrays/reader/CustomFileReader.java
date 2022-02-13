@@ -1,6 +1,7 @@
 package lukyanov.task.arrays.reader;
 
 import lukyanov.task.arrays.exception.CustomException;
+import lukyanov.task.arrays.validation.NumberValidation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,10 +13,12 @@ public class CustomFileReader {
     private static final Logger logger = LogManager.getLogger(CustomFileReader.class);
 
     public List<String> readFile(String path) throws CustomException {
+        List<String> list;
         File file = new File(path);
 
         try (BufferedReader reader = new BufferedReader(new FileReader(file)) ) {
-            return reader.lines().collect(Collectors.toList());
+            list = reader.lines().filter(NumberValidation::validateLine).collect(Collectors.toList());
+            return list;
         } catch (FileNotFoundException ex) {
             logger.error("File " + path +" is not found", ex.getMessage());
             throw new CustomException(ex);
