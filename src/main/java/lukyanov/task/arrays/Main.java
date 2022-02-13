@@ -1,7 +1,9 @@
 package lukyanov.task.arrays;
 
 import lukyanov.task.arrays.entity.ArrayEntity;
+import lukyanov.task.arrays.entity.Warehouse;
 import lukyanov.task.arrays.exception.CustomException;
+import lukyanov.task.arrays.observer.impl.ArrayObserverImpl;
 import lukyanov.task.arrays.parser.FileParser;
 import lukyanov.task.arrays.repository.Specification;
 import lukyanov.task.arrays.repository.impl.ArrayRepositoryImpl;
@@ -25,9 +27,17 @@ public class Main {
             List<ArrayEntity> list = service.getArrayFromFile(PATH);
             CustomRepositoryServiceImpl crs = new CustomRepositoryServiceImpl();
             crs.addListInRepo(list);
+            Warehouse warehouse = Warehouse.getInstance();
+            ArrayEntity array = repository.get(1);
+            array.attach(new ArrayObserverImpl());
+            logger.info(array);
+            logger.info(warehouse);
 
-            Specification specification = new SumSpecification(-2);
-            logger.info(repository.query(specification));
+            array.setNumbers(1,5, 15);
+
+            logger.info(array);
+            logger.info(warehouse);
+
 
         } catch (CustomException e) {
             e.printStackTrace();
