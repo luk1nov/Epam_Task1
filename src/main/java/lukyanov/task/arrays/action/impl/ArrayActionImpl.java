@@ -3,6 +3,7 @@ package lukyanov.task.arrays.action.impl;
 import lukyanov.task.arrays.action.ArrayAction;
 import lukyanov.task.arrays.entity.ArrayEntity;
 import lukyanov.task.arrays.entity.Warehouse;
+import lukyanov.task.arrays.service.IdGenerator;
 
 import java.util.Arrays;
 import java.util.OptionalDouble;
@@ -73,7 +74,7 @@ public class ArrayActionImpl implements ArrayAction {
             if (i == desiredElement) i = newElement;
             return i;
         });
-        newArrayEntity = new ArrayEntity(minus.toArray());
+        newArrayEntity = new ArrayEntity(IdGenerator.idGenerate(), minus.toArray());
         return newArrayEntity;
     }
 }

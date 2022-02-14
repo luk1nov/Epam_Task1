@@ -3,6 +3,7 @@ package lukyanov.task.arrays.action.impl;
 import lukyanov.task.arrays.entity.ArrayEntity;
 import lukyanov.task.arrays.exception.CustomException;
 import lukyanov.task.arrays.service.CustomArrayListService;
+import lukyanov.task.arrays.service.IdGenerator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
@@ -75,7 +76,7 @@ class ArrayActionImplTest {
     @Test
     @DisplayName("replaceElements")
     void replaceElement() {
-        ArrayEntity expectedArrayEntity = new ArrayEntity(new int[]{28, 255, 3457, 73, 10});
+        ArrayEntity expectedArrayEntity = new ArrayEntity(IdGenerator.idGenerate(), new int[]{28, 255, 3457, 73, 10});
         assertArrayEquals(expectedArrayEntity.getNumbers(), action.replaceElement(arrayEntity, -8, 10).getNumbers());
     }
 }

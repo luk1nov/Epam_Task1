@@ -5,8 +5,14 @@ import lukyanov.task.arrays.repository.Specification;
 
 public class LengthSpecification implements Specification {
 
+    int length;
+
+    public LengthSpecification(int length) {
+        this.length = length;
+    }
+
     @Override
     public boolean specify(ArrayEntity arrayEntity) {
-        return arrayEntity.getLength() == 0;
+        return arrayEntity.getLength() == length;
     }
 }

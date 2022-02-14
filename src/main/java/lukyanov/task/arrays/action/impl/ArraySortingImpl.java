@@ -2,6 +2,7 @@ package lukyanov.task.arrays.action.impl;
 
 import lukyanov.task.arrays.entity.ArrayEntity;
 import lukyanov.task.arrays.action.ArraySorting;
+import lukyanov.task.arrays.service.IdGenerator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -28,7 +29,7 @@ public class ArraySortingImpl implements ArraySorting {
                 }
             }
         }
-        sortedArrayEntity = new ArrayEntity(numbers);
+        sortedArrayEntity = new ArrayEntity(IdGenerator.idGenerate(), numbers);
         return sortedArrayEntity;
     }
 
@@ -45,7 +46,7 @@ public class ArraySortingImpl implements ArraySorting {
             }
             swap(numbers, i, minInd);
         }
-        newArrayEntity = new ArrayEntity(numbers);
+        newArrayEntity = new ArrayEntity(IdGenerator.idGenerate(), numbers);
         return newArrayEntity;
     }
 
@@ -65,7 +66,7 @@ public class ArraySortingImpl implements ArraySorting {
             }
             numbers[i + 1] = value;
         }
-        newArrayEntity = new ArrayEntity(numbers);
+        newArrayEntity = new ArrayEntity(IdGenerator.idGenerate(), numbers);
         return newArrayEntity;
 
     }

@@ -5,6 +5,7 @@ import lukyanov.task.arrays.entity.ArrayEntity;
 import lukyanov.task.arrays.entity.ArrayStatistics;
 import lukyanov.task.arrays.entity.Warehouse;
 import lukyanov.task.arrays.service.CustomWarehouseService;
+import lukyanov.task.arrays.service.IdGenerator;
 
 import java.util.List;
 import java.util.OptionalDouble;
@@ -37,7 +38,7 @@ public class CustomWarehouseServiceImpl implements CustomWarehouseService {
 
     @Override
     public void putNumbersInWarehouse(int... args){
-        ArrayEntity array = new ArrayEntity(args);
+        ArrayEntity array = new ArrayEntity(IdGenerator.idGenerate(), args);
         putArrayInWarehouse(array);
     }
 

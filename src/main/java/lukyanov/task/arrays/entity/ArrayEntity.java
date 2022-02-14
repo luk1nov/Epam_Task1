@@ -26,11 +26,6 @@ public class ArrayEntity extends AbstractArrayEntity implements ArrayObservable 
         this.numbers = numbers.clone();
     }
 
-    public ArrayEntity(int[] numbers) {
-        super();
-        this.numbers = numbers.clone();
-    }
-
     public int[] getNumbers() {
         return numbers.clone();
     }
@@ -71,12 +66,20 @@ public class ArrayEntity extends AbstractArrayEntity implements ArrayObservable 
         }
     }
 
-    @Override
+/*    @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || obj.getClass() != this.getClass()) return false;
         ArrayEntity thisArray = (ArrayEntity) obj;
-        return Arrays.equals(numbers, thisArray.numbers);
+        return Arrays.equals(numbers, thisArray.numbers) && thisArray.getId() == this.getId();
+    }*/
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ArrayEntity array = (ArrayEntity) o;
+        return Arrays.equals(numbers, array.numbers);
     }
 
     @Override

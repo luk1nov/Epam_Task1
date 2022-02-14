@@ -3,7 +3,7 @@ package lukyanov.task.arrays.service;
 public class IdGenerator {
     private static final long MIN_ID = 1;
     private static final long MAX_ID = 100_000;
-    private static long idCounter;
+    private static long idCounter = 0;
 
     public IdGenerator() {
 
