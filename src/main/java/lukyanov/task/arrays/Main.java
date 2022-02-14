@@ -14,7 +14,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 
 public class Main {
-    private static final String PATH = "resources/file/number.txt";
+    private static final String PATH = "resources/file/numbers.txt";
     private static final Logger logger = LogManager.getLogger(FileParser.class);
 
 
