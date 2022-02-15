@@ -1,6 +1,8 @@
 package lukyanov.task.arrays.service.impl;
 
 import lukyanov.task.arrays.entity.ArrayEntity;
+import lukyanov.task.arrays.entity.Warehouse;
+import lukyanov.task.arrays.observer.impl.ArrayObserverImpl;
 import lukyanov.task.arrays.repository.impl.ArrayRepositoryImpl;
 import lukyanov.task.arrays.service.IdGenerator;
 import org.apache.logging.log4j.LogManager;
@@ -26,6 +28,7 @@ class CustomRepositoryServiceImplTest {
 
     @Test
     void addNumberInRepo() {
+        Warehouse warehouse = Warehouse.getInstance();
         crs.addNumberInRepo(10, 6, 5);
         assertEquals(expectedArray, repository.get(0));
     }

@@ -9,9 +9,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Warehouse {
-    private static final Logger logger = LogManager.getLogger(CustomFileReader.class);
+    private static final Logger logger = LogManager.getLogger();
     private static Warehouse instance;
-    private Map<Long, ArrayStatistics> mapStatistics;
+    private final Map<Long, ArrayStatistics> mapStatistics;
+
 
     public Warehouse() {
         this.mapStatistics = new HashMap<>();

@@ -12,7 +12,7 @@ import java.util.List;
 
 public class FileParser {
     private static final String ARRAY_SPLITTER = ";";
-    private static final Logger logger = LogManager.getLogger(FileParser.class);
+    private static final Logger logger = LogManager.getLogger();
 
     private static int[] parseToArray(List<String> list){
         if(list.size() == 1 && list.get(0).isBlank()){

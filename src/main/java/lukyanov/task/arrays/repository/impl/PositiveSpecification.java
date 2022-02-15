@@ -6,7 +6,7 @@ import lukyanov.task.arrays.repository.Specification;
 
 public class PositiveSpecification implements Specification {
 
-    int numberOfPositiveElements;
+    private int numberOfPositiveElements;
 
     public PositiveSpecification(int numberOfPositiveElements) {
         this.numberOfPositiveElements = numberOfPositiveElements;

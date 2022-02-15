@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 
 public class CustomArrayListService {
-    private static final Logger logger = LogManager.getLogger(CustomFileReader.class);
+    private static final Logger logger = LogManager.getLogger();
 
     public List<ArrayEntity> getArrayFromFile(String path) throws CustomException {
         CustomFileReader cfs = new CustomFileReader();

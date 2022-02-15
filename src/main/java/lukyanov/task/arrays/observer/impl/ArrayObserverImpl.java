@@ -44,7 +44,6 @@ public class ArrayObserverImpl implements ArrayObserver {
             }
         } catch (CustomException e) {
             logger.error(e.getMessage());
-            e.printStackTrace();
         }
     }
 
@@ -62,7 +61,6 @@ public class ArrayObserverImpl implements ArrayObserver {
             }
         } catch (CustomException e) {
             logger.error(e.getMessage());
-            e.printStackTrace();
         }
     }
 
@@ -80,7 +78,6 @@ public class ArrayObserverImpl implements ArrayObserver {
             }
         } catch (CustomException e) {
             logger.error(e.getMessage());
-            e.printStackTrace();
         }
     }
 

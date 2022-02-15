@@ -9,11 +9,11 @@ import java.util.regex.Pattern;
 
 public class NumberValidation {
 
-    private static final String REGEX_EXPRESSION ="^(-?\\d+(\\s+)?;?(\\s+)?)*$";
-    private static final Logger logger = LogManager.getLogger(CustomFileReader.class);
+    private static final String REGEX_IS_ARRAY ="^(-?\\d+(\\s+)?;?(\\s+)?)*$";
+    private static final Logger logger = LogManager.getLogger();
 
     public static boolean validateLine(String str){
-        Pattern pattern = Pattern.compile(REGEX_EXPRESSION);
+        Pattern pattern = Pattern.compile(REGEX_IS_ARRAY);
         Matcher matcher = pattern.matcher(str);
         return matcher.matches();
     }

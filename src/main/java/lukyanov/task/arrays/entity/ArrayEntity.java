@@ -11,10 +11,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ArrayEntity extends AbstractArrayEntity implements ArrayObservable {
-    private static final Logger logger = LogManager.getLogger(ArrayEntity.class);
+public class ArrayEntity extends AbstractArrayEntity {
+    private static final Logger logger = LogManager.getLogger();
     private int[] numbers;
-    private List<ArrayObserver> observers = new ArrayList<>();
 
 
     public ArrayEntity() {
@@ -39,32 +38,6 @@ public class ArrayEntity extends AbstractArrayEntity implements ArrayObservable 
         return numbers.length;
     }
 
-
-    @Override
-    public void attach(ArrayObserver observer) {
-        observers.add(observer);
-    }
-
-    @Override
-    public void detach(ArrayObserver observer) {
-        observers.remove(observer);
-    }
-
-    @Override
-    public void notifyObserver() {
-        ArrayEvent event = new ArrayEvent(this);
-        if (!observers.isEmpty()) {
-            for (ArrayObserver observer : observers) {
-                if(this.getLength() == 0){
-                    observer.replaceStatistic(event);
-                }
-                observer.updateAvgValue(event);
-                observer.updateSumValue(event);
-                observer.updateMaxValue(event);
-                observer.updateMinValue(event);
-            }
-        }
-    }
 
 /*    @Override
     public boolean equals(Object obj) {

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class CustomFileReader {
-    private static final Logger logger = LogManager.getLogger(CustomFileReader.class);
+    private static final Logger logger = LogManager.getLogger();
 
     public List<String> readFile(String path) throws CustomException {
         List<String> list;

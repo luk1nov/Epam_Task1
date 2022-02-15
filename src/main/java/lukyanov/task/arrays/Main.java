@@ -15,7 +15,7 @@ import java.util.List;
 
 public class Main {
     private static final String PATH = "resources/file/numbers.txt";
-    private static final Logger logger = LogManager.getLogger(FileParser.class);
+    private static final Logger logger = LogManager.getLogger();
 
 
     public static void main(String[] args) {

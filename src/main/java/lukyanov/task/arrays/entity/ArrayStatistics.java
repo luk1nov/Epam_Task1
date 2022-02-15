@@ -1,11 +1,7 @@
 package lukyanov.task.arrays.entity;
 
-import lukyanov.task.arrays.action.impl.ArrayActionImpl;
-
 import java.util.Objects;
 import java.util.Optional;
-import java.util.OptionalDouble;
-import java.util.OptionalInt;
 
 public class ArrayStatistics {
     private Integer max;

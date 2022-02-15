@@ -5,7 +5,7 @@ import lukyanov.task.arrays.repository.Specification;
 
 public class LengthSpecification implements Specification {
 
-    int length;
+    private int length;
 
     public LengthSpecification(int length) {
         this.length = length;

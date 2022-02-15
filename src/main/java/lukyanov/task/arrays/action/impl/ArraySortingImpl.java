@@ -7,7 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class ArraySortingImpl implements ArraySorting {
-    private static final Logger logger = LogManager.getLogger(ArraySortingImpl.class);
+    private static final Logger logger = LogManager.getLogger();
 
     private void swap(int[] numbers, int ind1, int ind2) {
         int tmp = numbers[ind1];
