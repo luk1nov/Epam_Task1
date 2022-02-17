@@ -11,10 +11,23 @@ public class NumberValidation {
 
     private static final String REGEX_IS_ARRAY ="^(-?\\d+(\\s+)?;?(\\s+)?)*$";
     private static final Logger logger = LogManager.getLogger();
+    private static NumberValidation instance;
 
-    public static boolean validateLine(String str){
+    public NumberValidation() {
+        instance = new NumberValidation();
+    }
+
+    public static NumberValidation getInstance() {
+        if (instance == null){
+            instance = new NumberValidation();
+        }
+        return instance;
+    }
+
+    public boolean validateLine(String str){
         Pattern pattern = Pattern.compile(REGEX_IS_ARRAY);
         Matcher matcher = pattern.matcher(str);
         return matcher.matches();
     }
+
 }

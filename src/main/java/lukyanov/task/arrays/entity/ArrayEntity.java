@@ -55,6 +55,8 @@ public class ArrayEntity extends AbstractArrayEntity {
         return Arrays.equals(numbers, array.numbers);
     }
 
+
+
     @Override
     public int hashCode() {
         return Arrays.hashCode(numbers);

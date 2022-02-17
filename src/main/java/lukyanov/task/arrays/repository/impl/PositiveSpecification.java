@@ -17,4 +17,6 @@ public class PositiveSpecification implements Specification {
         ArrayActionImpl action = new ArrayActionImpl();
         return action.getNumberOfPlusElements(arrayEntity) < numberOfPositiveElements;
     }
+
+
 }

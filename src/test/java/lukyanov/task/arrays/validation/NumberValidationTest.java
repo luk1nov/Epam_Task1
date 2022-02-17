@@ -7,19 +7,20 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.*;
 
 class NumberValidationTest {
+    private static final NumberValidation validation = NumberValidation.getInstance();
 
     @ParameterizedTest
     @ValueSource(strings = {"1;4;5", "1; 4; 5;"})
     @DisplayName("validateValidLine")
     void validateValidLine(String input) {
-        assertTrue(NumberValidation.validateLine(input));
+        assertTrue(validation.validateLine(input));
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"1w;4;5-", "2;we;643"})
     @DisplayName("validateInvalidLine")
     void validateInvalidLine(String input) {
-        assertFalse(NumberValidation.validateLine(input));
+        assertFalse(validation.validateLine(input));
     }
 
 }

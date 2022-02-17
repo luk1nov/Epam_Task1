@@ -26,15 +26,16 @@ public class FileParser {
     }
 
     public List<ArrayEntity> parseFile(List<String> lines){
+        NumberValidation validation = NumberValidation.getInstance();
         List<ArrayEntity> arrayEntityList = new ArrayList<>();
         for (String line : lines) {
             line = line.trim();
-            if (NumberValidation.validateLine(line)){
+            if (validation.validateLine(line)){
                 logger.info("[" + line + "] Valid line");
                 ArrayEntity array = parseLine(line);
                 arrayEntityList.add(array);
             } else {
-                logger.error("[" + line + "] Invalid line");
+                logger.info("[" + line + "] Invalid line");
             }
         }
         return arrayEntityList;

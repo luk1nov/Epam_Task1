@@ -13,11 +13,12 @@ public class CustomFileReader {
     private static final Logger logger = LogManager.getLogger();
 
     public List<String> readFile(String path) throws CustomException {
+        NumberValidation validation = NumberValidation.getInstance();
         List<String> list;
         File file = new File(path);
 
         try (BufferedReader reader = new BufferedReader(new FileReader(file)) ) {
-            list = reader.lines().filter(NumberValidation::validateLine).collect(Collectors.toList());
+            list = reader.lines().filter(validation::validateLine).collect(Collectors.toList());
             return list;
         } catch (FileNotFoundException ex) {
             logger.error("File " + path +" is not found", ex.getMessage());
