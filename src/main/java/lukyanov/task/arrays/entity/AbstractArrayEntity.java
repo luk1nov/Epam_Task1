@@ -6,6 +6,8 @@ import lukyanov.task.arrays.observer.ArrayObserver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Objects;
+
 public abstract class AbstractArrayEntity implements ArrayObservable {
     private static final Logger logger = LogManager.getLogger();
     private ArrayObserver arrayObserver;
@@ -56,11 +58,24 @@ public abstract class AbstractArrayEntity implements ArrayObservable {
     public void notifyObserver() {
         ArrayEvent event = new ArrayEvent(this);
         if (arrayObserver != null) {
-            arrayObserver.replaceStatistic(event);
+            arrayObserver.clearStatistic(event);
             arrayObserver.updateAvgValue(event);
             arrayObserver.updateSumValue(event);
             arrayObserver.updateMaxValue(event);
             arrayObserver.updateMinValue(event);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AbstractArrayEntity that = (AbstractArrayEntity) o;
+        return id == that.id && Objects.equals(arrayObserver, that.arrayObserver);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(arrayObserver, id);
     }
 }

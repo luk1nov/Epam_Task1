@@ -17,7 +17,7 @@ public class ArrayObserverImpl implements ArrayObserver {
     private static final Logger logger = LogManager.getLogger();
 
 
-    public void replaceStatistic(ArrayEvent event){
+    public void clearStatistic(ArrayEvent event){
         try {
             ArrayEntity source = event.getSource();
             long sourceId = source.getId();
@@ -25,7 +25,6 @@ public class ArrayObserverImpl implements ArrayObserver {
             warehouse.clearValue(sourceId);
         } catch (CustomException e) {
             logger.error(e.getMessage());
-            e.printStackTrace();
         }
     }
 
@@ -92,7 +91,6 @@ public class ArrayObserverImpl implements ArrayObserver {
             statistics.setSum(action.getSummary(source));
         } catch (CustomException e) {
             logger.error(e.getMessage());
-            e.printStackTrace();
         }
     }
 }

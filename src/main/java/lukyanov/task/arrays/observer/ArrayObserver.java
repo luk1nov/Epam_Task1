@@ -2,7 +2,7 @@ package lukyanov.task.arrays.observer;
 
 public interface ArrayObserver {
 
-    void replaceStatistic(ArrayEvent event);
+    void clearStatistic(ArrayEvent event);
 
     void updateMinValue(ArrayEvent event);
 

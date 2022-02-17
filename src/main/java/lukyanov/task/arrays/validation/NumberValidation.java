@@ -14,7 +14,6 @@ public class NumberValidation {
     private static NumberValidation instance;
 
     public NumberValidation() {
-        instance = new NumberValidation();
     }
 
     public static NumberValidation getInstance() {

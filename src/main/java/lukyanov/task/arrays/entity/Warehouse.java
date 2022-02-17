@@ -1,7 +1,6 @@
 package lukyanov.task.arrays.entity;
 
 import lukyanov.task.arrays.exception.CustomException;
-import lukyanov.task.arrays.reader.CustomFileReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -4,8 +4,10 @@ import lukyanov.task.arrays.entity.ArrayEntity;
 import lukyanov.task.arrays.repository.ArrayRepository;
 import lukyanov.task.arrays.repository.Specification;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.List;
 
 public class ArrayRepositoryImpl implements ArrayRepository {
     private static ArrayRepositoryImpl instance;
@@ -60,19 +62,24 @@ public class ArrayRepositoryImpl implements ArrayRepository {
 
     @Override
     public List<? super ArrayEntity> query(Specification specification) {
-        List<ArrayEntity> list = arrays.stream().
+        return arrays.stream().
                 filter(specification::specify).
-                collect(Collectors.toList());
-        return list;
+                toList();
     }
 
     @Override
     public List<ArrayEntity> sort(Comparator<? super ArrayEntity> comparator) {
-        List<ArrayEntity> list = arrays.stream()
+        return arrays.stream()
                 .sorted(comparator)
-                .collect(Collectors.toList());
-        return list;
+                .toList();
     }
 
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("ArrayRepositoryImpl{");
+        sb.append("arrays=").append(arrays);
+        sb.append('}');
+        return sb.toString();
+    }
 }

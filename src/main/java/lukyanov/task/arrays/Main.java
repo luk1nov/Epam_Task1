@@ -1,11 +1,14 @@
 package lukyanov.task.arrays;
 
+import lukyanov.task.arrays.comparator.ArrayEntityIdComparator;
+import lukyanov.task.arrays.comparator.ArrayEntityNumbersComparator;
 import lukyanov.task.arrays.entity.ArrayEntity;
 import lukyanov.task.arrays.entity.Warehouse;
 import lukyanov.task.arrays.exception.CustomException;
 import lukyanov.task.arrays.observer.impl.ArrayObserverImpl;
 import lukyanov.task.arrays.parser.FileParser;
 import lukyanov.task.arrays.repository.impl.ArrayRepositoryImpl;
+import lukyanov.task.arrays.repository.impl.LengthSpecification;
 import lukyanov.task.arrays.service.CustomArrayListService;
 import lukyanov.task.arrays.service.impl.CustomRepositoryServiceImpl;
 import org.apache.logging.log4j.LogManager;
@@ -25,20 +28,12 @@ public class Main {
             List<ArrayEntity> list = service.getArrayFromFile(PATH);
             CustomRepositoryServiceImpl crs = new CustomRepositoryServiceImpl();
             crs.addListInRepo(list);
-            Warehouse warehouse = Warehouse.getInstance();
-            ArrayEntity array = repository.get(1);
-            array.attach(new ArrayObserverImpl());
-            logger.info(array);
-            logger.info(warehouse);
-
-            array.setNumbers(1,5, 15);
-
-            logger.info(array);
-            logger.info(warehouse);
-
+            logger.info(repository.query(new LengthSpecification(1)));
+            ArrayEntityNumbersComparator numbersComparator = new ArrayEntityNumbersComparator();
+            logger.info(repository.sort(numbersComparator));
 
         } catch (CustomException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage());
         }
     }
 }

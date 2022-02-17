@@ -14,7 +14,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ArraySortingImplTest {
-    private final ArraySortingImpl sorting = new ArraySortingImpl();
+    private final ArraySortingImpl sorting = ArraySortingImpl.getInstance();
     private static final Logger logger = LogManager.getLogger(ArraySortingImplTest.class);
     private static final int[] expectedArrayNumbers = {-8, 28, 73, 255, 3457};
     private ArrayEntity arrayEntity = new ArrayEntity();
