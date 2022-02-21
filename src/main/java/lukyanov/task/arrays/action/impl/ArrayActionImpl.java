@@ -2,10 +2,10 @@ package lukyanov.task.arrays.action.impl;
 
 import lukyanov.task.arrays.action.ArrayAction;
 import lukyanov.task.arrays.entity.ArrayEntity;
-import lukyanov.task.arrays.entity.Warehouse;
 import lukyanov.task.arrays.service.IdGenerator;
 
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.OptionalDouble;
 import java.util.OptionalInt;
 import java.util.stream.IntStream;
@@ -13,6 +13,9 @@ import java.util.stream.IntStream;
 public class ArrayActionImpl implements ArrayAction {
 
     private static ArrayActionImpl instance;
+
+    private ArrayActionImpl() {
+    }
 
     public static ArrayActionImpl getInstance(){
         if(instance == null){
@@ -28,37 +31,40 @@ public class ArrayActionImpl implements ArrayAction {
     }
 
     @Override
-    public OptionalInt getMinValue(ArrayEntity arrayEntity) {
+    public Optional<Integer> findMinValue(ArrayEntity arrayEntity) {
         IntStream minimum = convertToIntStream(arrayEntity);
-        return minimum.min();
+        OptionalInt result = minimum.min();
+        return Optional.ofNullable(result.isPresent() ? result.getAsInt() : null);
     }
 
     @Override
-    public OptionalInt getMaxValue(ArrayEntity arrayEntity) {
+    public Optional<Integer> findMaxValue(ArrayEntity arrayEntity) {
         IntStream maximum = convertToIntStream(arrayEntity);
-        return maximum.max();
+        OptionalInt result = maximum.max();
+        return Optional.ofNullable(result.isPresent() ? result.getAsInt() : null);
     }
 
     @Override
-    public OptionalDouble getAvgValue(ArrayEntity arrayEntity) {
+    public Optional<Double> findAvgValue(ArrayEntity arrayEntity) {
         IntStream avg = convertToIntStream(arrayEntity);
-        return avg.average();
+        OptionalDouble result = avg.average();
+        return Optional.ofNullable(result.isPresent() ? result.getAsDouble() : null);
     }
 
     @Override
-    public int getSummary(ArrayEntity arrayEntity) {
+    public int findSum(ArrayEntity arrayEntity) {
         IntStream sum1 = convertToIntStream(arrayEntity);
         return sum1.sum();
     }
 
     @Override
-    public long getNumberOfPlusElements(ArrayEntity arrayEntity) {
+    public long findPositiveElements(ArrayEntity arrayEntity) {
         IntStream plus = convertToIntStream(arrayEntity);
         return plus.filter(i -> (i > 0)).count();
     }
 
     @Override
-    public long getNumberOfMinusElements(ArrayEntity arrayEntity) {
+    public long findNegativeElements(ArrayEntity arrayEntity) {
         IntStream minus = convertToIntStream(arrayEntity);
         return minus.filter(i -> (i < 0)).count();
     }

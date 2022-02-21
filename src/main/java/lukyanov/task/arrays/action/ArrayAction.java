@@ -2,22 +2,21 @@ package lukyanov.task.arrays.action;
 
 import lukyanov.task.arrays.entity.ArrayEntity;
 
-import java.util.OptionalDouble;
-import java.util.OptionalInt;
+import java.util.Optional;
 
 public interface ArrayAction {
 
-    OptionalInt getMinValue(ArrayEntity arrayEntity);
+    Optional<Integer> findMinValue(ArrayEntity arrayEntity);
 
-    OptionalInt getMaxValue(ArrayEntity arrayEntity);
+    Optional<Integer> findMaxValue(ArrayEntity arrayEntity);
 
-    OptionalDouble getAvgValue(ArrayEntity arrayEntity);
+    Optional<Double> findAvgValue(ArrayEntity arrayEntity);
 
-    int getSummary(ArrayEntity arrayEntity);
+    int findSum(ArrayEntity arrayEntity);
 
-    long getNumberOfPlusElements(ArrayEntity arrayEntity);
+    long findPositiveElements(ArrayEntity arrayEntity);
 
-    long getNumberOfMinusElements(ArrayEntity arrayEntity);
+    long findNegativeElements(ArrayEntity arrayEntity);
 
     ArrayEntity replaceElement(ArrayEntity arrayEntity, int desiredElement, int newElement);
 }

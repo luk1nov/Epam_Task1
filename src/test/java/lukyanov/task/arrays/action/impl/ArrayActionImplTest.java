@@ -9,21 +9,18 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.*;
 
 import java.util.List;
-import java.util.OptionalDouble;
-import java.util.OptionalInt;
+import java.util.Optional;
 import java.util.stream.IntStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ArrayActionImplTest {
     private final ArrayActionImpl action = ArrayActionImpl.getInstance();
-    private static final Logger logger = LogManager.getLogger(ArraySortingImplTest.class);
+    private static final Logger logger = LogManager.getLogger();
     private ArrayEntity arrayEntity = new ArrayEntity();
 
-
     @BeforeEach
-    @DisplayName("arrayServiceMethod")
-    public void arrayServiceMethod() throws CustomException {
+    void setUp() throws CustomException {
         CustomArrayListService aes = new CustomArrayListService();
         String path = "resources/file/numbers.txt";
         List<ArrayEntity> arrayEntityList = aes.getArrayFromFile(path);
@@ -31,50 +28,48 @@ class ArrayActionImplTest {
     }
 
     @Test
-    @DisplayName("convertToIntStream")
     void convertToIntStreamTest() {
         IntStream intStream = action.convertToIntStream(arrayEntity);
         assertArrayEquals(intStream.toArray(), arrayEntity.getNumbers());
     }
 
     @Test
-    @DisplayName("arrayMin")
-    void getMinValue() {
-        assertEquals(OptionalInt.of(-8), action.getMinValue(arrayEntity));
+    void findMinValue() {
+        Optional<Integer> expectedMin = Optional.of(-8);
+        assertEquals(action.findMinValue(arrayEntity), expectedMin);
     }
 
     @Test
-    @DisplayName("arrayMax")
-    void getMaxValue() {
-        assertEquals( OptionalInt.of(3457), action.getMaxValue(arrayEntity));
+    void findMaxValue() {
+        Optional<Integer> expectedMax = Optional.of(3457);
+        assertEquals(action.findMaxValue(arrayEntity), expectedMax);
     }
 
     @Test
-    @DisplayName("arrayAvg")
-    void getAvgValue() {
-        assertEquals(OptionalDouble.of(761), action.getAvgValue(arrayEntity));
+    void findAvgValue() {
+        Optional<Double> expectedAvg = Optional.of(761.0);
+        assertEquals(action.findAvgValue(arrayEntity), expectedAvg);
     }
 
     @Test
-    @DisplayName("arraySum")
-    void getSummary() {
-        assertEquals(3805, action.getSummary(arrayEntity));
+    void findSum() {
+        int expectedSum = 3805;
+        assertEquals(action.findSum(arrayEntity), expectedSum);
     }
 
     @Test
-    @DisplayName("plusElements")
-    void getNumberOfPlusElements() {
-        assertEquals(4, action.getNumberOfPlusElements(arrayEntity));
+    void findPositiveElements() {
+        int expectedPositive = 4;
+        assertEquals(action.findPositiveElements(arrayEntity), expectedPositive);
     }
 
     @Test
-    @DisplayName("minusElements")
-    void getNumberOfMinusElements() {
-        assertEquals(1, action.getNumberOfMinusElements(arrayEntity));
+    void findNegativeElements() {
+        int expectedNegative = 1;
+        assertEquals(action.findNegativeElements(arrayEntity), expectedNegative);
     }
 
     @Test
-    @DisplayName("replaceElements")
     void replaceElement() {
         ArrayEntity expectedArrayEntity = new ArrayEntity(IdGenerator.idGenerate(), new int[]{28, 255, 3457, 73, 10});
         assertArrayEquals(expectedArrayEntity.getNumbers(), action.replaceElement(arrayEntity, -8, 10).getNumbers());

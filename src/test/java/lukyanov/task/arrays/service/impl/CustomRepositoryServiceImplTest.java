@@ -4,9 +4,11 @@ import lukyanov.task.arrays.entity.ArrayEntity;
 import lukyanov.task.arrays.entity.Warehouse;
 import lukyanov.task.arrays.observer.impl.ArrayObserverImpl;
 import lukyanov.task.arrays.repository.impl.ArrayRepositoryImpl;
+import lukyanov.task.arrays.repository.impl.IdSpecification;
 import lukyanov.task.arrays.service.IdGenerator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -22,25 +24,27 @@ class CustomRepositoryServiceImplTest {
 
     @Test
     void addArrayInRepo() {
-        crs.addArrayInRepo(new ArrayEntity(IdGenerator.idGenerate(), new int[]{10, 6, 5}));
+        crs.addArrayInRepo(new ArrayEntity(1, new int[]{10, 6, 5}));
         assertEquals(expectedArray, repository.get(0));
     }
 
     @Test
     void addNumberInRepo() {
-        Warehouse warehouse = Warehouse.getInstance();
         crs.addNumberInRepo(10, 6, 5);
         assertEquals(expectedArray, repository.get(0));
     }
 
     @Test
+    public void addNumberAndIdInRepo() {
+        crs.addNumberInRepo(1, new int[]{10, 6, 5});
+        assertEquals(expectedArray, repository.get(0));
+    }
+
+    @Test
     void addListInRepo() {
-        ArrayEntity expectedArray2 = new ArrayEntity(IdGenerator.idGenerate(), new int[]{18, 1, 2});
         List<ArrayEntity> list = new ArrayList<>();
-        list.add(new ArrayEntity(IdGenerator.idGenerate(), new int[]{10, 6, 5}));
-        list.add(new ArrayEntity(IdGenerator.idGenerate(), new int[]{18, 1, 2}));
+        list.add(new ArrayEntity(1, new int[]{10, 6, 5}));
         crs.addListInRepo(list);
         assertEquals(expectedArray, repository.get(0));
-        assertEquals(expectedArray2, repository.get(1));
     }
 }

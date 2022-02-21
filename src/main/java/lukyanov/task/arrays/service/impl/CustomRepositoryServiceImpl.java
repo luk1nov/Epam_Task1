@@ -24,6 +24,12 @@ public class CustomRepositoryServiceImpl implements CustomRepositoryService {
     }
 
     @Override
+    public void addNumberInRepo(long id, int[] args) {
+        ArrayEntity array = new ArrayEntity(id, args);
+        addArrayInRepo(array);
+    }
+
+    @Override
     public void addListInRepo(List<ArrayEntity> arrayEntities){
         for (ArrayEntity array: arrayEntities) {
             addArrayInRepo(array);

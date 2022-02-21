@@ -23,35 +23,26 @@ class CustomWarehouseServiceImplTest {
     private final CustomWarehouseServiceImpl cws = new CustomWarehouseServiceImpl();
     private static final Logger logger = LogManager.getLogger();
 
-    @BeforeEach
-    public void beforeEachWarehousePut(){
-        logger.info(statistics);
-    }
 
     @Test
-    @DisplayName("putArrayInWarehouse")
     void putArrayInWarehouse() {
-        try {
-            cws.putArrayInWarehouse(new ArrayEntity(4, new int[]{10, 5, 6}));
-            assertEquals(warehouse.getById(4), statistics);
-        } catch (CustomException e) {
-            logger.error(e.getMessage());
-        }
+        cws.putArrayInWarehouse(new ArrayEntity(1, new int[]{10, 5, 6}));
+        assertEquals(warehouse.getById(1), statistics);
     }
 
     @Test
-    @DisplayName("putNumbersInWarehouse")
     void putNumbersInWarehouse() {
-        try {
-            cws.putNumbersInWarehouse(10, 5, 6);
-            assertEquals(warehouse.getById(1), statistics);
-        } catch (CustomException e) {
-            logger.error(e.getMessage());
-        }
+        cws.putNumbersInWarehouse(10, 5, 6);
+        assertEquals(warehouse.getById(1), statistics);
     }
 
     @Test
-    @DisplayName("putListInWarehouse")
+    void putNumbersAndIdInWarehouse() {
+        cws.putNumbersInWarehouse(1, new int[]{10, 5, 6});
+        assertEquals(warehouse.getById(1), statistics);
+    }
+
+    @Test
     void putListInWarehouse() {
         ArrayStatistics statistics2 = new ArrayStatistics(18, 1, 7, 21);
         List<ArrayEntity> list = new ArrayList<>();
@@ -59,11 +50,8 @@ class CustomWarehouseServiceImplTest {
         list.add(new ArrayEntity(IdGenerator.idGenerate(), new int[]{18, 1, 2}));
         cws.putListInWarehouse(list);
         logger.info(warehouse);
-        try {
-            assertEquals(statistics, warehouse.getById(1));
-            assertEquals(statistics2, warehouse.getById(2));
-        } catch (CustomException e) {
-            logger.error(e.getMessage());
-        }
+
+        assertEquals(statistics, warehouse.getById(1));
+        assertEquals(statistics2, warehouse.getById(2));
     }
 }

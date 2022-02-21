@@ -5,7 +5,6 @@ import lukyanov.task.arrays.repository.ArrayRepository;
 import lukyanov.task.arrays.repository.Specification;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 
@@ -25,28 +24,25 @@ public class ArrayRepositoryImpl implements ArrayRepository {
     }
 
 
-    public int getSize(){
-        return arrays.size();
+    @Override
+    public boolean addArray(ArrayEntity arrayEntity) {
+        return arrays.add(arrayEntity);
     }
 
     @Override
-    public void addArray(ArrayEntity arrayEntity) {
-        arrays.add(arrayEntity);
+    public boolean addAllArrays(List<ArrayEntity> arrayEntities) {
+        return arrays.addAll(arrayEntities);
     }
 
     @Override
-    public void addAllArrays(Collection<? extends ArrayEntity> arrayEntities) {
-        arrays.addAll(arrayEntities);
+    public boolean removeArray(ArrayEntity arrayEntity) {
+        return arrays.remove(arrayEntity);
     }
 
-    @Override
-    public void removeArray(ArrayEntity arrayEntity) {
-        arrays.remove(arrayEntity);
-    }
 
     @Override
-    public void removeAllArrays(Collection<?> arrayEntities) {
-        arrays.removeAll(arrayEntities);
+    public boolean removeAllArrays(List<ArrayEntity> arrayEntities) {
+        return arrays.removeAll(arrayEntities);
     }
 
     @Override
@@ -59,12 +55,15 @@ public class ArrayRepositoryImpl implements ArrayRepository {
         return arrays.set(index, arrayEntity);
     }
 
+    public int size() {
+        return arrays.size();
+    }
 
     @Override
-    public List<? super ArrayEntity> query(Specification specification) {
-        return arrays.stream().
-                filter(specification::specify).
-                toList();
+    public List<ArrayEntity> query(Specification specification) {
+        return arrays.stream()
+                .filter(specification::specify)
+                .toList();
     }
 
     @Override

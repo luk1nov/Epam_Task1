@@ -10,6 +10,9 @@ public class ArraySortingImpl implements ArraySorting {
     private static final Logger logger = LogManager.getLogger();
     private static ArraySortingImpl instance;
 
+    private ArraySortingImpl() {
+    }
+
     public static ArraySortingImpl getInstance(){
         if(instance == null){
             instance = new ArraySortingImpl();
@@ -76,7 +79,6 @@ public class ArraySortingImpl implements ArraySorting {
         }
         newArrayEntity = new ArrayEntity(IdGenerator.idGenerate(), numbers);
         return newArrayEntity;
-
     }
 
 

@@ -8,37 +8,42 @@ import lukyanov.task.arrays.service.CustomWarehouseService;
 import lukyanov.task.arrays.service.IdGenerator;
 
 import java.util.List;
-import java.util.OptionalDouble;
-import java.util.OptionalInt;
+import java.util.Optional;
 
 public class CustomWarehouseServiceImpl implements CustomWarehouseService {
 
     @Override
     public void putArrayInWarehouse(ArrayEntity array){
-        long id = array.getId();
+        Warehouse warehouse = Warehouse.getInstance();
         ArrayActionImpl action = ArrayActionImpl.getInstance();
-        int sum = action.getSummary(array);
-        OptionalInt min = action.getMinValue(array);
-        OptionalInt max = action.getMaxValue(array);
-        OptionalDouble avg = action.getAvgValue(array);
+        long id = array.getId();
+        int sum = action.findSum(array);
+        Optional<Integer> min = action.findMinValue(array);
+        Optional<Integer> max = action.findMaxValue(array);
+        Optional<Double> avg = action.findAvgValue(array);
         ArrayStatistics statistics = new ArrayStatistics();
         statistics.setSum(sum);
         if(min.isPresent()){
-            statistics.setMin(min.getAsInt());
+            statistics.setMin(min.get());
         }
         if(max.isPresent()){
-            statistics.setMax(max.getAsInt());
+            statistics.setMax(max.get());
         }
         if(avg.isPresent()){
-            statistics.setAvg(avg.getAsDouble());
+            statistics.setAvg(avg.get());
         }
-        Warehouse warehouse = Warehouse.getInstance();
         warehouse.putById(id, statistics);
     }
 
     @Override
     public void putNumbersInWarehouse(int... args){
         ArrayEntity array = new ArrayEntity(IdGenerator.idGenerate(), args);
+        putArrayInWarehouse(array);
+    }
+
+    @Override
+    public void putNumbersInWarehouse(long id, int[] args) {
+        ArrayEntity array = new ArrayEntity(id, args);
         putArrayInWarehouse(array);
     }
 

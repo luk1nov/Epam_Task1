@@ -15,35 +15,23 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ArraySortingImplTest {
     private final ArraySortingImpl sorting = ArraySortingImpl.getInstance();
-    private static final Logger logger = LogManager.getLogger(ArraySortingImplTest.class);
-    private static final int[] expectedArrayNumbers = {-8, 28, 73, 255, 3457};
-    private ArrayEntity arrayEntity = new ArrayEntity();
+    private static final Logger logger = LogManager.getLogger();
+    private final int[] expectedArray = {-8, 28, 73, 255, 3457};
+    private final ArrayEntity realArray = new ArrayEntity(1, new int[]{28, 255, 3457, 73, -8});
 
-
-    @BeforeEach
-    @DisplayName("arrayServiceMethod")
-    public void arrayServiceMethod() throws CustomException {
-        CustomArrayListService aes = new CustomArrayListService();
-        String path = "resources/file/numbers.txt";
-        List<ArrayEntity> arrayEntityList = aes.getArrayFromFile(path);
-        arrayEntity = arrayEntityList.get(0);
-    }
 
     @Test
-    @DisplayName("bubbleSort")
     void bubbleSort() {
-        assertArrayEquals(expectedArrayNumbers, sorting.bubbleSort(arrayEntity).getNumbers() );
+        assertArrayEquals(sorting.bubbleSort(realArray).getNumbers(), expectedArray );
     }
 
     @Test
-    @DisplayName("selectionSort")
     void selectionSort() {
-        assertArrayEquals(expectedArrayNumbers, sorting.selectionSort(arrayEntity).getNumbers());
+        assertArrayEquals(sorting.selectionSort(realArray).getNumbers(), expectedArray );
     }
 
     @Test
-    @DisplayName("insertionSort")
     void insertionSort() {
-        assertArrayEquals(expectedArrayNumbers, sorting.insertionSort(arrayEntity).getNumbers());
+        assertArrayEquals(sorting.insertionSort(realArray).getNumbers(), expectedArray );
     }
 }

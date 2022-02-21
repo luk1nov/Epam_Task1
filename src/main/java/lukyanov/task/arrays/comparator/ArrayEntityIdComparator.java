@@ -1,14 +1,13 @@
 package lukyanov.task.arrays.comparator;
 
-import lukyanov.task.arrays.entity.ArrayEntity;
+import lukyanov.task.arrays.entity.AbstractArrayEntity;
 
-import java.lang.reflect.Array;
 import java.util.Comparator;
 
-public class ArrayEntityIdComparator implements Comparator<ArrayEntity> {
+public class ArrayEntityIdComparator implements Comparator<AbstractArrayEntity> {
 
     @Override
-    public int compare(ArrayEntity o1, ArrayEntity o2) {
+    public int compare(AbstractArrayEntity o1, AbstractArrayEntity o2) {
         return Long.compare(o1.getId(), o2.getId());
     }
 }

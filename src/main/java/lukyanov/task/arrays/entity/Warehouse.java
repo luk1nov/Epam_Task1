@@ -13,7 +13,7 @@ public class Warehouse {
     private final Map<Long, ArrayStatistics> mapStatistics;
 
 
-    public Warehouse() {
+    private Warehouse() {
         this.mapStatistics = new HashMap<>();
     }
 
@@ -24,36 +24,24 @@ public class Warehouse {
         return instance;
     }
 
-    public ArrayStatistics getById(long arrayId) throws CustomException {
-        if (mapStatistics.containsKey(arrayId)) {
-            ArrayStatistics statistics = mapStatistics.get(arrayId);
-            return statistics;
-        } else {
-            logger.error("element with id(" + arrayId + ") not found");
-            throw new CustomException("element with id(" + arrayId + ") not found");
-        }
+    public ArrayStatistics getById(long arrayId) {
+        return mapStatistics.get(arrayId);
+    }
+
+    public boolean containsKey(Long key) {
+        return mapStatistics.containsKey(key);
     }
 
     public ArrayStatistics putById(Long arrayId, ArrayStatistics statistics) {
         return mapStatistics.put(arrayId, statistics);
     }
 
-    public ArrayStatistics removeById(long arrayId) throws CustomException{
-        if (mapStatistics.containsKey(arrayId)) {
-            return mapStatistics.remove(arrayId);
-        } else {
-            logger.error("element with id(" + arrayId + ") not found");
-            throw new CustomException("element with id(" + arrayId + ") not found");
-        }
+    public ArrayStatistics removeById(long arrayId) {
+        return mapStatistics.remove(arrayId);
     }
 
-    public ArrayStatistics clearValue(long arrayId) throws CustomException {
-        if(mapStatistics.containsKey(arrayId)){
-            return mapStatistics.replace(arrayId, new ArrayStatistics());
-        } else {
-            logger.error("element with id(" + arrayId + ") not found");
-            throw new CustomException("element with id(" + arrayId + ") not found");
-        }
+    public ArrayStatistics clearValue(long arrayId) {
+        return mapStatistics.replace(arrayId, new ArrayStatistics());
     }
 
     @Override

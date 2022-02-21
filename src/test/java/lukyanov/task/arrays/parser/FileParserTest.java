@@ -18,11 +18,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class FileParserTest {
     private final FileParser fileParser = new FileParser();
-    private static final Logger logger = LogManager.getLogger(FileParserTest.class);
+    private static final Logger logger = LogManager.getLogger();
     private static final String PATH = "resources/file/numbers.txt";
 
     @Test
-    @DisplayName("parseFile")
     void parseFile() {
         try {
             int[] expectedArray = {28, 255, 3457, 73, -8};

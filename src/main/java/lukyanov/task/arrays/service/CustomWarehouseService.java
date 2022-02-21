@@ -10,6 +10,8 @@ public interface CustomWarehouseService {
 
     void putNumbersInWarehouse(int... args);
 
+    void putNumbersInWarehouse(long id, int[] args);
+
     void putListInWarehouse(List<ArrayEntity> arrayEntities);
 
 }

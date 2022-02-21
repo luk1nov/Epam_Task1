@@ -24,7 +24,6 @@ class CustomArrayListServiceTest {
         try {
             List<ArrayEntity> readArrayEntityList = aes.getArrayFromFile(PATH);
             assertArrayEquals(expectedArray, readArrayEntityList.get(0).getNumbers());
-
         } catch (CustomException e) {
             logger.error(e.getMessage());
         }

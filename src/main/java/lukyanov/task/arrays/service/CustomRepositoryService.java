@@ -10,5 +10,7 @@ public interface CustomRepositoryService {
 
     void addNumberInRepo(int... args);
 
+    void addNumberInRepo(long id, int[] args);
+
     void addListInRepo(List<ArrayEntity> arrayEntities);
 }
