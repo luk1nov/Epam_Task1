@@ -21,11 +21,11 @@ public class CustomFileReader {
             list = reader.lines().filter(validation::validateLine).collect(Collectors.toList());
             return list;
         } catch (FileNotFoundException ex) {
-            logger.error("File " + path +" is not found", ex.getMessage());
-            throw new CustomException(ex);
+            logger.error("File " + path + "can not be open", ex);
+            throw new CustomException("File " + path + "can not be open", ex);
         } catch (IOException e) {
-            logger.error(e.getMessage());
-            throw new CustomException(e.getMessage());
+            logger.error("File " + path + " can't be open", e);
+            throw new CustomException("File " + path + " can't be open", e);
         }
     }
 

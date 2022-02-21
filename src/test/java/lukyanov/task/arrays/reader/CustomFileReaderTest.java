@@ -17,7 +17,7 @@ class CustomFileReaderTest {
     private static final String PATH = "resources/file/numbers.txt";
 
     @Test
-    void readFile() {
+    public void readFile() {
         try {
             List<String> readStringList = customFileReader.readFile(PATH);
             String expectedString = "28; 255; 3457; 73; -8";

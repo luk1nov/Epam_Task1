@@ -11,7 +11,7 @@ class ArrayEntityIdComparatorTest {
 
 
     @Test
-    void compare() {
+    public void compare() {
         long expectedCompare = 0;
         AbstractArrayEntity firstArray = new ArrayEntity(15, new int[]{});
         AbstractArrayEntity secondArray = new ArrayEntity(15, new int[]{1,2,3});

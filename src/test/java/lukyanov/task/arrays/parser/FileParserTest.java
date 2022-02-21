@@ -22,7 +22,7 @@ class FileParserTest {
     private static final String PATH = "resources/file/numbers.txt";
 
     @Test
-    void parseFile() {
+    public void parseFile() {
         try {
             int[] expectedArray = {28, 255, 3457, 73, -8};
             CustomFileReader customFileReader = new CustomFileReader();

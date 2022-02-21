@@ -27,48 +27,48 @@ class ArrayObserverImplTest {
 
 
     @BeforeEach
-    void beforeEachMethod()  {
+    public void beforeEachMethod()  {
         CustomWarehouseServiceImpl cws = new CustomWarehouseServiceImpl();
         cws.putArrayInWarehouse(array);
     }
 
     @Test
-    void clearStatistic() {
+    public void clearStatistic() {
         ArrayStatistics expectedStatistics = new ArrayStatistics();
         observer.clearStatistic(event);
         assertEquals(warehouse.getById(realId), expectedStatistics);
     }
 
     @Test
-    void updateMinValue() {
+    public void updateMinValue() {
         array.setNumbers(4,5,6);
         observer.updateMinValue(event);
         assertEquals(action.findMinValue(array), warehouse.getById(realId).getMin());
     }
 
     @Test
-    void updateMaxValue() {
+    public void updateMaxValue() {
         array.setNumbers(1,57,4);
         observer.updateMaxValue(event);
         assertEquals(action.findMaxValue(array), warehouse.getById(realId).getMax());
     }
 
     @Test
-    void updateAvgValue(){
+    public void updateAvgValue(){
         array.setNumbers(1,2,3);
         observer.updateAvgValue(event);
         assertEquals(action.findAvgValue(array), warehouse.getById(realId).getAvg());
     }
 
     @Test
-    void updateSumValue() {
+    public void updateSumValue() {
         array.setNumbers(1,2,3);
         observer.updateSumValue(event);
         assertEquals(action.findSum(array), warehouse.getById(realId).getSum());
     }
 
     @AfterEach
-    void tearDown() {
+    public void tearDown() {
         logger.info(warehouse.getById(realId));
     }
 

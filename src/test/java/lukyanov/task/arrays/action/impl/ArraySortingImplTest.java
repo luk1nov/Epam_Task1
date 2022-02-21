@@ -21,17 +21,17 @@ class ArraySortingImplTest {
 
 
     @Test
-    void bubbleSort() {
+    public void bubbleSort() {
         assertArrayEquals(sorting.bubbleSort(realArray).getNumbers(), expectedArray );
     }
 
     @Test
-    void selectionSort() {
+    public void selectionSort() {
         assertArrayEquals(sorting.selectionSort(realArray).getNumbers(), expectedArray );
     }
 
     @Test
-    void insertionSort() {
+    public void insertionSort() {
         assertArrayEquals(sorting.insertionSort(realArray).getNumbers(), expectedArray );
     }
 }

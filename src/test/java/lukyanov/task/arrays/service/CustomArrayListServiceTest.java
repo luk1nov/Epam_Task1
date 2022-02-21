@@ -20,7 +20,7 @@ class CustomArrayListServiceTest {
 
     @Test
     @DisplayName("getArrayFromFile")
-    void getArrayFromFile() {
+    public void getArrayFromFile() {
         try {
             List<ArrayEntity> readArrayEntityList = aes.getArrayFromFile(PATH);
             assertArrayEquals(expectedArray, readArrayEntityList.get(0).getNumbers());

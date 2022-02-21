@@ -23,13 +23,13 @@ class CustomRepositoryServiceImplTest {
     private static final Logger logger = LogManager.getLogger();
 
     @Test
-    void addArrayInRepo() {
+    public void addArrayInRepo() {
         crs.addArrayInRepo(new ArrayEntity(1, new int[]{10, 6, 5}));
         assertEquals(expectedArray, repository.get(0));
     }
 
     @Test
-    void addNumberInRepo() {
+    public void addNumberInRepo() {
         crs.addNumberInRepo(10, 6, 5);
         assertEquals(expectedArray, repository.get(0));
     }
@@ -41,7 +41,7 @@ class CustomRepositoryServiceImplTest {
     }
 
     @Test
-    void addListInRepo() {
+    public void addListInRepo() {
         List<ArrayEntity> list = new ArrayList<>();
         list.add(new ArrayEntity(1, new int[]{10, 6, 5}));
         crs.addListInRepo(list);

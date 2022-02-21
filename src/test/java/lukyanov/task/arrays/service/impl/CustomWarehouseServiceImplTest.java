@@ -25,25 +25,25 @@ class CustomWarehouseServiceImplTest {
 
 
     @Test
-    void putArrayInWarehouse() {
+    public void putArrayInWarehouse() {
         cws.putArrayInWarehouse(new ArrayEntity(1, new int[]{10, 5, 6}));
         assertEquals(warehouse.getById(1), statistics);
     }
 
     @Test
-    void putNumbersInWarehouse() {
+    public void putNumbersInWarehouse() {
         cws.putNumbersInWarehouse(10, 5, 6);
         assertEquals(warehouse.getById(1), statistics);
     }
 
     @Test
-    void putNumbersAndIdInWarehouse() {
+    public void putNumbersAndIdInWarehouse() {
         cws.putNumbersInWarehouse(1, new int[]{10, 5, 6});
         assertEquals(warehouse.getById(1), statistics);
     }
 
     @Test
-    void putListInWarehouse() {
+    public void putListInWarehouse() {
         ArrayStatistics statistics2 = new ArrayStatistics(18, 1, 7, 21);
         List<ArrayEntity> list = new ArrayList<>();
         list.add(new ArrayEntity(IdGenerator.idGenerate(), new int[]{10, 5, 6}));

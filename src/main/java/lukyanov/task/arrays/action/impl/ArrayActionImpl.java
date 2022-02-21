@@ -2,7 +2,10 @@ package lukyanov.task.arrays.action.impl;
 
 import lukyanov.task.arrays.action.ArrayAction;
 import lukyanov.task.arrays.entity.ArrayEntity;
+import lukyanov.task.arrays.exception.CustomException;
 import lukyanov.task.arrays.service.IdGenerator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 import java.util.Optional;
@@ -12,6 +15,7 @@ import java.util.stream.IntStream;
 
 public class ArrayActionImpl implements ArrayAction {
 
+    private static final Logger logger = LogManager.getLogger();
     private static ArrayActionImpl instance;
 
     private ArrayActionImpl() {
@@ -77,10 +81,23 @@ public class ArrayActionImpl implements ArrayAction {
         ArrayEntity newArrayEntity;
         int[] numbers = arrayEntity.getNumbers();
         IntStream minus = IntStream.of(numbers).map(i -> {
-            if (i == desiredElement) i = newElement;
+            if (i == desiredElement){
+                i = newElement;
+            }
             return i;
         });
         newArrayEntity = new ArrayEntity(IdGenerator.idGenerate(), minus.toArray());
         return newArrayEntity;
     }
+
+
+    private void verifyBeforeAction(ArrayEntity arrayEntity) throws CustomException {
+        if (arrayEntity == null) {
+            logger.error("Array entity is null");
+            throw new CustomException("Array entity is null");
+        }
+
+    }
+
+
 }

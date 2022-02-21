@@ -20,7 +20,7 @@ class ArrayActionImplTest {
     private ArrayEntity arrayEntity = new ArrayEntity();
 
     @BeforeEach
-    void setUp() throws CustomException {
+    public void setUp() throws CustomException {
         CustomArrayListService aes = new CustomArrayListService();
         String path = "resources/file/numbers.txt";
         List<ArrayEntity> arrayEntityList = aes.getArrayFromFile(path);
@@ -28,49 +28,49 @@ class ArrayActionImplTest {
     }
 
     @Test
-    void convertToIntStreamTest() {
+    public void convertToIntStreamTest() {
         IntStream intStream = action.convertToIntStream(arrayEntity);
         assertArrayEquals(intStream.toArray(), arrayEntity.getNumbers());
     }
 
     @Test
-    void findMinValue() {
+    public void findMinValue() {
         Optional<Integer> expectedMin = Optional.of(-8);
         assertEquals(action.findMinValue(arrayEntity), expectedMin);
     }
 
     @Test
-    void findMaxValue() {
+    public void findMaxValue() {
         Optional<Integer> expectedMax = Optional.of(3457);
         assertEquals(action.findMaxValue(arrayEntity), expectedMax);
     }
 
     @Test
-    void findAvgValue() {
+    public void findAvgValue() {
         Optional<Double> expectedAvg = Optional.of(761.0);
         assertEquals(action.findAvgValue(arrayEntity), expectedAvg);
     }
 
     @Test
-    void findSum() {
+    public void findSum() {
         int expectedSum = 3805;
         assertEquals(action.findSum(arrayEntity), expectedSum);
     }
 
     @Test
-    void findPositiveElements() {
+    public void findPositiveElements() {
         int expectedPositive = 4;
         assertEquals(action.findPositiveElements(arrayEntity), expectedPositive);
     }
 
     @Test
-    void findNegativeElements() {
+    public void findNegativeElements() {
         int expectedNegative = 1;
         assertEquals(action.findNegativeElements(arrayEntity), expectedNegative);
     }
 
     @Test
-    void replaceElement() {
+    public void replaceElement() {
         ArrayEntity expectedArrayEntity = new ArrayEntity(IdGenerator.idGenerate(), new int[]{28, 255, 3457, 73, 10});
         assertArrayEquals(expectedArrayEntity.getNumbers(), action.replaceElement(arrayEntity, -8, 10).getNumbers());
     }

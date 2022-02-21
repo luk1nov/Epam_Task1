@@ -9,7 +9,7 @@ class ArrayEntityNumbersComparatorTest {
     private final ArrayEntityNumbersComparator numbersComparator = new ArrayEntityNumbersComparator();
 
     @Test
-    void compare() {
+    public void compare() {
         long expectedCompare = 0;
         ArrayEntity firstArray = new ArrayEntity(15, new int[]{4, 5, 6});
         ArrayEntity secondArray = new ArrayEntity(15, new int[]{4, 5, 6});
