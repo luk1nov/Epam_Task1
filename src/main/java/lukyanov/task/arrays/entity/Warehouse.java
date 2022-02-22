@@ -24,8 +24,13 @@ public class Warehouse {
         return instance;
     }
 
-    public ArrayStatistics getById(long arrayId) {
-        return mapStatistics.get(arrayId);
+    public ArrayStatistics getById(long arrayId) throws CustomException {
+        ArrayStatistics statistics = mapStatistics.get(arrayId);
+        if (statistics == null) {
+            logger.error(" no such element by id " + arrayId);
+            throw new CustomException(" no such element by id " + arrayId);
+        }
+        return statistics;
     }
 
     public boolean containsKey(Long key) {

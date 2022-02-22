@@ -4,6 +4,7 @@ import lukyanov.task.arrays.action.impl.ArrayActionImpl;
 import lukyanov.task.arrays.entity.ArrayEntity;
 import lukyanov.task.arrays.entity.ArrayStatistics;
 import lukyanov.task.arrays.entity.Warehouse;
+import lukyanov.task.arrays.exception.CustomException;
 import lukyanov.task.arrays.observer.ArrayEvent;
 import lukyanov.task.arrays.service.impl.CustomWarehouseServiceImpl;
 import org.apache.logging.log4j.LogManager;
@@ -34,42 +35,66 @@ class ArrayObserverImplTest {
 
     @Test
     public void clearStatistic() {
-        ArrayStatistics expectedStatistics = new ArrayStatistics();
-        observer.clearStatistic(event);
-        assertEquals(warehouse.getById(realId), expectedStatistics);
+        try {
+            ArrayStatistics expectedStatistics = new ArrayStatistics();
+            observer.clearStatistic(event);
+            assertEquals(warehouse.getById(realId), expectedStatistics);
+        } catch (CustomException e) {
+            logger.error(e.getMessage());
+        }
     }
 
     @Test
     public void updateMinValue() {
-        array.setNumbers(4,5,6);
-        observer.updateMinValue(event);
-        assertEquals(action.findMinValue(array), warehouse.getById(realId).getMin());
+        try {
+            array.setNumbers(4,5,6);
+            observer.updateMinValue(event);
+            assertEquals(action.findMinValue(array), warehouse.getById(realId).getMin());
+        } catch (CustomException e) {
+            logger.error(e.getMessage());
+        }
     }
 
     @Test
     public void updateMaxValue() {
-        array.setNumbers(1,57,4);
-        observer.updateMaxValue(event);
-        assertEquals(action.findMaxValue(array), warehouse.getById(realId).getMax());
+        try {
+            array.setNumbers(1,57,4);
+            observer.updateMaxValue(event);
+            assertEquals(action.findMaxValue(array), warehouse.getById(realId).getMax());
+        } catch (CustomException e) {
+            logger.error(e.getMessage());
+        }
     }
 
     @Test
     public void updateAvgValue(){
-        array.setNumbers(1,2,3);
-        observer.updateAvgValue(event);
-        assertEquals(action.findAvgValue(array), warehouse.getById(realId).getAvg());
+        try {
+            array.setNumbers(1,2,3);
+            observer.updateAvgValue(event);
+            assertEquals(action.findAvgValue(array), warehouse.getById(realId).getAvg());
+        } catch (CustomException e) {
+            logger.error(e.getMessage());
+        }
     }
 
     @Test
     public void updateSumValue() {
-        array.setNumbers(1,2,3);
-        observer.updateSumValue(event);
-        assertEquals(action.findSum(array), warehouse.getById(realId).getSum());
+        try {
+            array.setNumbers(1,2,3);
+            observer.updateSumValue(event);
+            assertEquals(action.findSum(array), warehouse.getById(realId).getSum());
+        } catch (CustomException e) {
+            logger.error(e.getMessage());
+        }
     }
 
     @AfterEach
     public void tearDown() {
-        logger.info(warehouse.getById(realId));
+        try {
+            logger.info(warehouse.getById(realId));
+        } catch (CustomException e) {
+            logger.error(e.getMessage());
+        }
     }
 
 }
