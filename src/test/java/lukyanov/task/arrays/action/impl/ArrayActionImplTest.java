@@ -23,7 +23,7 @@ class ArrayActionImplTest {
     public void setUp() throws CustomException {
         CustomArrayListService aes = new CustomArrayListService();
         String path = "resources/file/numbers.txt";
-        List<ArrayEntity> arrayEntityList = aes.getArrayFromFile(path);
+        List<ArrayEntity> arrayEntityList = aes.getArraysFromFile(path);
         arrayEntity = arrayEntityList.get(0);
     }
 

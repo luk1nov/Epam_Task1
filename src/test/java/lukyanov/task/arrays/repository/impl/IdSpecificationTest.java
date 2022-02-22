@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class IdSpecificationTest {
     private final IdSpecification specification = new IdSpecification(1);
 
-
     @Test
     public void specify() {
         long expectedId = 1;

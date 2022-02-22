@@ -12,7 +12,7 @@ import java.util.List;
 public class CustomArrayListService {
     private static final Logger logger = LogManager.getLogger();
 
-    public List<ArrayEntity> getArrayFromFile(String path) throws CustomException {
+    public List<ArrayEntity> getArraysFromFile(String path) throws CustomException {
         CustomFileReader cfs = new CustomFileReader();
         FileParser fileParser = new FileParser();
         List<String> stringList = cfs.readFile(path);

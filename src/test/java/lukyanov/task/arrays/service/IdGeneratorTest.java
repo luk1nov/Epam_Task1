@@ -10,9 +10,6 @@ class IdGeneratorTest {
     public void idGenerate() {
         long realId = IdGenerator.idGenerate();
         long expectedId = 1;
-        assertEquals(expectedId, realId);
-
-        realId = IdGenerator.idGenerate();
-        assertEquals(++expectedId, realId);
+        assertEquals(realId, expectedId);
     }
 }

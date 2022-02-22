@@ -22,7 +22,7 @@ class CustomArrayListServiceTest {
     @DisplayName("getArrayFromFile")
     public void getArrayFromFile() {
         try {
-            List<ArrayEntity> readArrayEntityList = aes.getArrayFromFile(PATH);
+            List<ArrayEntity> readArrayEntityList = aes.getArraysFromFile(PATH);
             assertArrayEquals(expectedArray, readArrayEntityList.get(0).getNumbers());
         } catch (CustomException e) {
             logger.error(e.getMessage());

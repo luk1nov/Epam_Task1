@@ -10,7 +10,6 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MinSpecificationTest {
-
     private final MinSpecification specification = new MinSpecification(3);
     private final ArrayActionImpl action = ArrayActionImpl.getInstance();
 

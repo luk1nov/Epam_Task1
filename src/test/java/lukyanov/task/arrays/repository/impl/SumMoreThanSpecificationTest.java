@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SumMoreThanSpecificationTest {
-
     private final SumMoreThanSpecification specification = new SumMoreThanSpecification(10);
     private final ArrayActionImpl action = ArrayActionImpl.getInstance();
 

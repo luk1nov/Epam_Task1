@@ -28,7 +28,7 @@ class ArrayObserverImplTest {
 
 
     @BeforeEach
-    public void beforeEachMethod()  {
+    public void setUp()  {
         CustomWarehouseServiceImpl cws = new CustomWarehouseServiceImpl();
         cws.putArrayInWarehouse(array);
     }
@@ -96,5 +96,4 @@ class ArrayObserverImplTest {
             logger.error(e.getMessage());
         }
     }
-
 }

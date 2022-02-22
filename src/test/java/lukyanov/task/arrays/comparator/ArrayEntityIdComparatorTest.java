@@ -9,7 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class ArrayEntityIdComparatorTest {
     private final ArrayEntityIdComparator idComparator = new ArrayEntityIdComparator();
 
-
     @Test
     public void compare() {
         long expectedCompare = 0;
